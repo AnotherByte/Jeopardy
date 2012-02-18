@@ -15,7 +15,6 @@ namespace Jeopardy.DL
         static private string sDataSource = "Data Source=db_jeopardy.s3db";
 
 
-
         // used for select
         static private DataTable ExecuteQuery(string sql)
         {
@@ -71,16 +70,30 @@ namespace Jeopardy.DL
 
 
 
+
+        // returns datatable of tbl_user
+        static public DataTable GetUsers()
+        {
+            return ExecuteQuery("select * from tbl_user");
+        }
+
+
         // returns datatable of tbl_category
         static public DataTable GetCategory()
         {
             return ExecuteQuery("select * from tbl_category");
         }
 
-        // returns datatable of tbl_category
-        static public DataTable GetUsers()
+        // returns datatable of tbl_question
+        static public DataTable GetQuestions()
         {
-            return ExecuteQuery("select * from tbl_user");
+            return ExecuteQuery("select * from tbl_question");
+        }
+
+        // returns datatable of tbl_answer
+        static public DataTable GetAnswers()
+        {
+            return ExecuteQuery("select * from tbl_answer");
         }
     }
 }
