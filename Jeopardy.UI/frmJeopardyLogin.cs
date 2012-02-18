@@ -27,5 +27,11 @@ namespace Jeopardy.UI
                 lstUsers.Items.Add(oCategories.Items[x].Description.ToString());
             }
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            frmJeopardyBoard oBoard = new frmJeopardyBoard();
+            oBoard.ShowDialog();
+        }
     }
 }

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmJeopardyBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJeopardyBoard.Designer.cs">
+      <DependentUpon>frmJeopardyBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmJeopardyLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmJeopardyBoard.resx">
+      <DependentUpon>frmJeopardyBoard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmJeopardyLogin.resx">
       <DependentUpon>frmJeopardyLogin.cs</DependentUpon>
     </EmbeddedResource>
