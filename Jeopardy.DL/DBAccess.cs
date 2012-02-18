@@ -76,5 +76,11 @@ namespace Jeopardy.DL
         {
             return ExecuteQuery("select * from tbl_category");
         }
+
+        // returns datatable of tbl_category
+        static public DataTable GetUsers()
+        {
+            return ExecuteQuery("select * from tbl_user");
+        }
     }
 }

@@ -506,7 +506,8 @@
             this.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "frmJeopardyBoard";
-            this.Text = "frmJeopardyBoard";
+            this.Text = "Jeopardy - User";
+            this.Load += new System.EventHandler(this.frmJeopardyBoard_Load);
             this.ResumeLayout(false);
 
         }

@@ -8,7 +8,7 @@ using Jeopardy.DL;
 namespace Jeopardy.BL
 {
     // class for GROUP of categories
-    public class cCategories : System.Collections.CollectionBase
+    public class cCategories
     {
 
         #region properties

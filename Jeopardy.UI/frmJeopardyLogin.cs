@@ -12,26 +12,36 @@ namespace Jeopardy.UI
 {
     public partial class frmJeopardyLogin : Form
     {
+        private cUsers oUsers;
+
         public frmJeopardyLogin()
         {
             InitializeComponent();
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            cCategories oCategories = new cCategories();
-            oCategories.FillCategories();
+            oUsers = new cUsers();
+            oUsers.FillUsers();
 
-            for (int x = 0; x < oCategories.Count(); x++)
+            foreach (cUser oUser in oUsers.Items)
             {
-                lstUsers.Items.Add(oCategories.Items[x].Description.ToString());
+                lstUsers.DataSource = oUsers.Items;
+                lstUsers.DisplayMember = "Description";
             }
         }
 
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            frmJeopardyBoard oBoard = new frmJeopardyBoard();
-            oBoard.ShowDialog();
+            if (lstUsers.SelectedIndex >= 0)
+            {
+                frmJeopardyBoard oBoard = new frmJeopardyBoard(oUsers.Items[lstUsers.SelectedIndex]);
+                this.Hide();
+                oBoard.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+
+            }
         }
     }
 }

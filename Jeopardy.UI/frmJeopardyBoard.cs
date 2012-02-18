@@ -6,18 +6,21 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Jeopardy.BL;
 
 namespace Jeopardy.UI
 {
     public partial class frmJeopardyBoard : Form
     {
         private Button[,] arButtons;
+        private cUser oCurrentUser;
 
 
-        public frmJeopardyBoard()
+        public frmJeopardyBoard(cUser oUser)
         {
             InitializeComponent();
 
+            oCurrentUser = oUser;
 
             #region button array
 
@@ -86,6 +89,15 @@ namespace Jeopardy.UI
 
 
             }
+        }
+
+        private void frmJeopardyBoard_Load(object sender, EventArgs e)
+        {
+            //// test for user
+            this.Text = string.Format("Jeopardy - {0}", oCurrentUser.Description.ToString());
+            //lblA.Text = oCurrentUser.ID.ToString();
+            //lblB.Text = oCurrentUser.Description.ToString();
+            //lblC.Text = oCurrentUser.HighScore.ToString();
         }
 
 
