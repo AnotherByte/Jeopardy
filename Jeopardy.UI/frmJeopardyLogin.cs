@@ -19,10 +19,13 @@ namespace Jeopardy.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cCategory Category = new cCategory();
+            cCategories oCategories = new cCategories();
+            oCategories.FillCategories();
 
-            Category.FillUsers();
-            dataGridView1.DataSource = Category.users;
+            for (int x = 0; x < oCategories.Count(); x++)
+            {
+                lstUsers.Items.Add(oCategories.Items[x].Description.ToString());
+            }
         }
     }
 }
