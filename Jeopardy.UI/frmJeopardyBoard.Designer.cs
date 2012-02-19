@@ -488,7 +488,7 @@
             // 
             // lblA
             // 
-            this.lblA.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblA.BackColor = System.Drawing.Color.SlateGray;
             this.lblA.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblA.ForeColor = System.Drawing.Color.Snow;
             this.lblA.Location = new System.Drawing.Point(15, 36);
@@ -500,7 +500,7 @@
             // 
             // lblB
             // 
-            this.lblB.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblB.BackColor = System.Drawing.Color.SlateGray;
             this.lblB.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblB.ForeColor = System.Drawing.Color.Snow;
             this.lblB.Location = new System.Drawing.Point(199, 36);
@@ -512,7 +512,7 @@
             // 
             // lblC
             // 
-            this.lblC.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblC.BackColor = System.Drawing.Color.SlateGray;
             this.lblC.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblC.ForeColor = System.Drawing.Color.Snow;
             this.lblC.Location = new System.Drawing.Point(383, 36);
@@ -524,7 +524,7 @@
             // 
             // lblD
             // 
-            this.lblD.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblD.BackColor = System.Drawing.Color.SlateGray;
             this.lblD.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblD.ForeColor = System.Drawing.Color.Snow;
             this.lblD.Location = new System.Drawing.Point(567, 36);
@@ -536,7 +536,7 @@
             // 
             // lblE
             // 
-            this.lblE.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblE.BackColor = System.Drawing.Color.SlateGray;
             this.lblE.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblE.ForeColor = System.Drawing.Color.Snow;
             this.lblE.Location = new System.Drawing.Point(751, 36);
@@ -548,7 +548,7 @@
             // 
             // lblF
             // 
-            this.lblF.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblF.BackColor = System.Drawing.Color.SlateGray;
             this.lblF.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblF.ForeColor = System.Drawing.Color.Snow;
             this.lblF.Location = new System.Drawing.Point(935, 36);

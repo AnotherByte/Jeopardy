@@ -15,6 +15,7 @@ namespace Jeopardy.UI
         private Button[,] arButtons;
         private cUser oCurrentUser;
         cCategories oCategories;
+        cCategory oCategory;
 
 
         public frmJeopardyBoard(cUser oUser)
@@ -86,6 +87,32 @@ namespace Jeopardy.UI
                 sQuestion = sQuestion.Remove(0, 3);
                 //MessageBox.Show(sQuestion);
 
+                // get category of selected question
+                switch (sQuestion[0])
+                {
+                    case 'A':
+                        oCategory = oCategories.Items[0];
+                        break;
+                    case 'B':
+                        oCategory = oCategories.Items[1];
+                        break;
+                    case 'C':
+                        oCategory = oCategories.Items[2];
+                        break;
+                    case 'D':
+                        oCategory = oCategories.Items[3];
+                        break;
+                    case 'E':
+                        oCategory = oCategories.Items[4];
+                        break;
+                    case 'F':
+                        oCategory = oCategories.Items[5];
+                        break;
+                }
+                int iQuestID;
+                int.TryParse(sQuestion.Remove(0, 1), out iQuestID);
+                frmQuestion oQuestionForm = new frmQuestion(oCategory.Items[iQuestID-1]);
+                oQuestionForm.Show();
             }
         }
 
@@ -105,6 +132,12 @@ namespace Jeopardy.UI
             lblD.Text = oCategories.Items[3].Description;
             lblE.Text = oCategories.Items[4].Description;
             lblF.Text = oCategories.Items[5].Description;
+
+            // load questions
+            foreach (cCategory oCat in oCategories.Items)
+            {
+                oCat.FillCategory();
+            }
 
         }
     }

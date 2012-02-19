@@ -87,15 +87,15 @@ namespace Jeopardy.DL
         }
 
         // returns datatable of tbl_question
-        static public DataTable GetQuestions()
+        static public DataTable GetQuestions(string ID)
         {
-            return ExecuteQuery("select * from tbl_question");
+            return ExecuteQuery(string.Format("select * from tbl_question where category_id = {0}", ID));
         }
 
         // returns datatable of tbl_answer
-        static public DataTable GetAnswers()
+        static public DataTable GetAnswers(string ID)
         {
-            return ExecuteQuery("select * from tbl_answer");
+            return ExecuteQuery(string.Format("select * from tbl_answer where question_id = {0}", ID));
         }
 
 

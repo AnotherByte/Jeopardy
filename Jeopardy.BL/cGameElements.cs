@@ -201,9 +201,9 @@ namespace Jeopardy.BL
         }
 
         // gets datatable from DB and fills collection
-        public void FillCategories()
+        public void FillCategory()
         {
-            DataTable dtCategory = DBAccess.GetQuestions();
+            DataTable dtCategory = DBAccess.GetQuestions(this.ID.ToString());
 
             foreach (DataRow dr in dtCategory.Rows)
             {
@@ -317,9 +317,9 @@ namespace Jeopardy.BL
         }
 
         // gets datatable from DB and fills collection
-        public void FillQuestions()
+        public void FillQuestion()
         {
-            DataTable dtQuestion = DBAccess.GetAnswers();
+            DataTable dtQuestion = DBAccess.GetAnswers(this.ID.ToString());
 
             foreach (DataRow dr in dtQuestion.Rows)
             {
@@ -373,7 +373,7 @@ namespace Jeopardy.BL
                 int.TryParse(oDR["answer_id"].ToString(), out iID);
                 int.TryParse(oDR["question_id"].ToString(), out iQuestID);
                 sDescription = oDR["answer_description"].ToString();
-                bool.TryParse(oDR["answer_correct"].ToString(), out bIsCorrect);
+                bool.TryParse(oDR["answer_is_correct"].ToString(), out bIsCorrect);
             }
             catch (Exception ex)
             {
