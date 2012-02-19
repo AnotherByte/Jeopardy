@@ -14,6 +14,7 @@ namespace Jeopardy.UI
     {
         private Button[,] arButtons;
         private cUser oCurrentUser;
+        cCategories oCategories;
 
 
         public frmJeopardyBoard(cUser oUser)
@@ -74,8 +75,6 @@ namespace Jeopardy.UI
             }
 
             #endregion
-
-                
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -87,19 +86,26 @@ namespace Jeopardy.UI
                 sQuestion = sQuestion.Remove(0, 3);
                 //MessageBox.Show(sQuestion);
 
-
             }
         }
 
         private void frmJeopardyBoard_Load(object sender, EventArgs e)
         {
-            //// test for user
+            // bring in user name
             this.Text = string.Format("Jeopardy - {0}", oCurrentUser.Description.ToString());
-            //lblA.Text = oCurrentUser.ID.ToString();
-            //lblB.Text = oCurrentUser.Description.ToString();
-            //lblC.Text = oCurrentUser.HighScore.ToString();
+
+            // load up categories
+            oCategories = new cCategories();
+            oCategories.FillCategories();
+
+            // set up labels
+            lblA.Text = oCategories.Items[0].Description;
+            lblB.Text = oCategories.Items[1].Description;
+            lblC.Text = oCategories.Items[2].Description;
+            lblD.Text = oCategories.Items[3].Description;
+            lblE.Text = oCategories.Items[4].Description;
+            lblF.Text = oCategories.Items[5].Description;
+
         }
-
-
     }
 }

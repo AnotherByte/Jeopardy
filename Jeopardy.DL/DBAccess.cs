@@ -78,10 +78,12 @@ namespace Jeopardy.DL
         }
 
 
-        // returns datatable of tbl_category
-        static public DataTable GetCategory()
+        // returns datatable of tbl_category (UNUSED category and NOT final jeopardy)
+        static public DataTable GetCategory(string sIDs)
         {
-            return ExecuteQuery("select * from tbl_category");
+            // set categories used
+            ExecuteNonQuery(string.Format("update tbl_category set category_used = 1 where category_id in ({0})", sIDs));
+            return ExecuteQuery(string.Format("select * from tbl_category where category_id in ({0})", sIDs));
         }
 
         // returns datatable of tbl_question
@@ -94,6 +96,43 @@ namespace Jeopardy.DL
         static public DataTable GetAnswers()
         {
             return ExecuteQuery("select * from tbl_answer");
+        }
+
+
+        // get # of UNUSED categories
+        static private int GetUnusedCategory()
+        {
+            return ExecuteNonQuery("select count(category_used) from tbl_category where category_used = 0");
+        }
+
+        // reset used categories
+        static private int ResetCategories()
+        {
+            return ExecuteNonQuery("update tbl_category set category_used = 0");
+        }
+
+        // get array of unused categories
+        static public List<int> UnusedCategoryList()
+        {
+            // check if enough unused
+            if (GetUnusedCategory() < 6)
+            {
+                // too few categories remain, reset
+                ResetCategories();
+            }
+
+            DataTable dtUnusedID = ExecuteQuery("select category_id from tbl_category where (category_used = 0 AND category_is_final = 0)");
+            List<int> unused = new List<int>();
+
+            // fill list with cat_id's
+            for (int i = 0; i < dtUnusedID.Rows.Count; i++)  
+            {
+                int temp;
+                int.TryParse(dtUnusedID.Rows[i]["category_id"].ToString(), out temp);
+                unused.Add(temp);
+            }
+
+            return unused;
         }
     }
 }

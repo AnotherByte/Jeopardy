@@ -38,10 +38,6 @@ namespace Jeopardy.UI
                 oBoard.ShowDialog();
                 this.Show();
             }
-            else
-            {
-
-            }
         }
     }
 }

@@ -64,10 +64,31 @@ namespace Jeopardy.BL
             return true;
         }
 
-        // gets datatable from DB and fills collection
+        // gets datatable from DB and fills collection with UNUSED single jeopardy categories
         public void FillCategories()
         {
-            DataTable dtCategory = DBAccess.GetCategory();
+            // get list of #'s of unused categories
+            List<int> iIDs = DBAccess.UnusedCategoryList();
+
+            // remove if too many
+            Random rand = new Random();
+            while (iIDs.Count > 6)
+            {
+                iIDs.RemoveAt(rand.Next(0, iIDs.Count - 1));
+            }
+            rand = null;
+
+            // biuld string of id's for sql
+            string sIDs = "";
+            foreach (int i in iIDs)
+            {
+                sIDs += string.Format("{0}, ", i);
+            }
+            sIDs = sIDs.Remove(sIDs.Length - 2);
+
+
+            // get datatable
+            DataTable dtCategory = DBAccess.GetCategory(sIDs);
 
             foreach (DataRow dr in dtCategory.Rows)
             {
@@ -77,8 +98,6 @@ namespace Jeopardy.BL
             }
         }
     }
-
-
 
     // class for a category, contains questions
     public class cCategory
