@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnA = new System.Windows.Forms.Button();
             this.btnB = new System.Windows.Forms.Button();
             this.btnD = new System.Windows.Forms.Button();
             this.btnC = new System.Windows.Forms.Button();
             this.lblDescription = new System.Windows.Forms.Label();
+            this.tmrClock = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnA
             // 
             this.btnA.BackColor = System.Drawing.SystemColors.Control;
             this.btnA.Location = new System.Drawing.Point(80, 255);
-            this.btnA.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnA.Margin = new System.Windows.Forms.Padding(6);
             this.btnA.Name = "btnA";
             this.btnA.Size = new System.Drawing.Size(145, 70);
             this.btnA.TabIndex = 0;
@@ -90,6 +92,11 @@
             this.lblDescription.Text = "label1";
             this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tmrClock
+            // 
+            this.tmrClock.Interval = 5000;
+            this.tmrClock.Tick += new System.EventHandler(this.tmrClock_Tick);
+            // 
             // frmQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -102,7 +109,7 @@
             this.Controls.Add(this.btnB);
             this.Controls.Add(this.btnA);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmQuestion";
             this.Text = "frmQuestion";
             this.Load += new System.EventHandler(this.frmQuestion_Load);
@@ -117,5 +124,6 @@
         private System.Windows.Forms.Button btnD;
         private System.Windows.Forms.Button btnC;
         private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Timer tmrClock;
     }
 }

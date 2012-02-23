@@ -36,7 +36,7 @@ namespace Jeopardy.UI
                 frmJeopardyBoard oBoard = new frmJeopardyBoard(oUsers.Items[lstUsers.SelectedIndex]);
                 this.Hide();
                 oBoard.ShowDialog();
-                this.Show();
+                this.Close();
             }
         }
     }
