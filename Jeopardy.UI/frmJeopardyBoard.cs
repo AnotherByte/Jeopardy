@@ -17,6 +17,8 @@ namespace Jeopardy.UI
         cCategories oCategories;
         cCategory oCategory;
 
+        private int iScore = 0;
+
 
         public frmJeopardyBoard(cUser oUser)
         {
@@ -112,7 +114,20 @@ namespace Jeopardy.UI
                 int iQuestID;
                 int.TryParse(sQuestion.Remove(0, 1), out iQuestID);
                 frmQuestion oQuestionForm = new frmQuestion(oCategory.Items[iQuestID-1]);
-                oQuestionForm.Show();
+                oQuestionForm.ShowDialog();
+
+
+                // manage score
+                if (oQuestionForm.AnsweredCorrect)
+                {
+                    iScore += oCategory.Items[iQuestID - 1].Cost;
+                }
+                else
+                {
+                    iScore -= oCategory.Items[iQuestID - 1].Cost;
+                }
+                lblScore.Text = string.Format("Score: {0}" , iScore);
+
             }
         }
 

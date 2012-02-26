@@ -246,17 +246,7 @@ namespace Jeopardy.BL
               get { return iCost; }
               set { iCost = value; }
             }
-
-            private int iCorrectAnswerID;
-            public int CorrectAnswerID
-            {
-                get { return iCorrectAnswerID; }
-                set { iCorrectAnswerID = value; }
-            }
-
-
-
-
+        
             private List<cAnswer> mcol;
             public List<cAnswer> Items
             {
@@ -334,12 +324,6 @@ namespace Jeopardy.BL
                 cAnswer oAnswer = new cAnswer();
                 oAnswer.Load(dr);
                 this.Add(oAnswer);
-
-                // check if correct answer
-                if (oAnswer.IsCorrect)
-                {
-                    this.CorrectAnswerID = oAnswer.ID;
-                }
             }
         }
     }

@@ -64,6 +64,8 @@
             this.lblD = new System.Windows.Forms.Label();
             this.lblE = new System.Windows.Forms.Label();
             this.lblF = new System.Windows.Forms.Label();
+            this.lblScore = new System.Windows.Forms.Label();
+            this.lblLastQuestion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnA1
@@ -71,7 +73,7 @@
             this.btnA1.BackColor = System.Drawing.SystemColors.Control;
             this.btnA1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnA1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnA1.Location = new System.Drawing.Point(15, 139);
+            this.btnA1.Location = new System.Drawing.Point(31, 210);
             this.btnA1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnA1.Name = "btnA1";
             this.btnA1.Size = new System.Drawing.Size(162, 70);
@@ -85,7 +87,7 @@
             this.btnB1.BackColor = System.Drawing.SystemColors.Control;
             this.btnB1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnB1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnB1.Location = new System.Drawing.Point(199, 139);
+            this.btnB1.Location = new System.Drawing.Point(215, 210);
             this.btnB1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnB1.Name = "btnB1";
             this.btnB1.Size = new System.Drawing.Size(162, 70);
@@ -99,7 +101,7 @@
             this.btnC1.BackColor = System.Drawing.SystemColors.Control;
             this.btnC1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnC1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnC1.Location = new System.Drawing.Point(383, 139);
+            this.btnC1.Location = new System.Drawing.Point(399, 210);
             this.btnC1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnC1.Name = "btnC1";
             this.btnC1.Size = new System.Drawing.Size(162, 70);
@@ -113,7 +115,7 @@
             this.btnD1.BackColor = System.Drawing.SystemColors.Control;
             this.btnD1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnD1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnD1.Location = new System.Drawing.Point(567, 139);
+            this.btnD1.Location = new System.Drawing.Point(583, 210);
             this.btnD1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnD1.Name = "btnD1";
             this.btnD1.Size = new System.Drawing.Size(162, 70);
@@ -127,7 +129,7 @@
             this.btnE1.BackColor = System.Drawing.SystemColors.Control;
             this.btnE1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnE1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnE1.Location = new System.Drawing.Point(751, 139);
+            this.btnE1.Location = new System.Drawing.Point(767, 210);
             this.btnE1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnE1.Name = "btnE1";
             this.btnE1.Size = new System.Drawing.Size(162, 70);
@@ -141,7 +143,7 @@
             this.btnF1.BackColor = System.Drawing.SystemColors.Control;
             this.btnF1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnF1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnF1.Location = new System.Drawing.Point(935, 139);
+            this.btnF1.Location = new System.Drawing.Point(951, 210);
             this.btnF1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnF1.Name = "btnF1";
             this.btnF1.Size = new System.Drawing.Size(162, 70);
@@ -155,7 +157,7 @@
             this.btnF2.BackColor = System.Drawing.SystemColors.Control;
             this.btnF2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnF2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnF2.Location = new System.Drawing.Point(935, 240);
+            this.btnF2.Location = new System.Drawing.Point(951, 311);
             this.btnF2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnF2.Name = "btnF2";
             this.btnF2.Size = new System.Drawing.Size(162, 70);
@@ -169,7 +171,7 @@
             this.btnE2.BackColor = System.Drawing.SystemColors.Control;
             this.btnE2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnE2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnE2.Location = new System.Drawing.Point(751, 240);
+            this.btnE2.Location = new System.Drawing.Point(767, 311);
             this.btnE2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnE2.Name = "btnE2";
             this.btnE2.Size = new System.Drawing.Size(162, 70);
@@ -183,7 +185,7 @@
             this.btnD2.BackColor = System.Drawing.SystemColors.Control;
             this.btnD2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnD2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnD2.Location = new System.Drawing.Point(567, 240);
+            this.btnD2.Location = new System.Drawing.Point(583, 311);
             this.btnD2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnD2.Name = "btnD2";
             this.btnD2.Size = new System.Drawing.Size(162, 70);
@@ -197,7 +199,7 @@
             this.btnC2.BackColor = System.Drawing.SystemColors.Control;
             this.btnC2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnC2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnC2.Location = new System.Drawing.Point(383, 240);
+            this.btnC2.Location = new System.Drawing.Point(399, 311);
             this.btnC2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnC2.Name = "btnC2";
             this.btnC2.Size = new System.Drawing.Size(162, 70);
@@ -211,7 +213,7 @@
             this.btnB2.BackColor = System.Drawing.SystemColors.Control;
             this.btnB2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnB2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnB2.Location = new System.Drawing.Point(199, 240);
+            this.btnB2.Location = new System.Drawing.Point(215, 311);
             this.btnB2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnB2.Name = "btnB2";
             this.btnB2.Size = new System.Drawing.Size(162, 70);
@@ -225,7 +227,7 @@
             this.btnA2.BackColor = System.Drawing.SystemColors.Control;
             this.btnA2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnA2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnA2.Location = new System.Drawing.Point(15, 240);
+            this.btnA2.Location = new System.Drawing.Point(31, 311);
             this.btnA2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnA2.Name = "btnA2";
             this.btnA2.Size = new System.Drawing.Size(162, 70);
@@ -239,7 +241,7 @@
             this.btnF3.BackColor = System.Drawing.SystemColors.Control;
             this.btnF3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnF3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnF3.Location = new System.Drawing.Point(935, 341);
+            this.btnF3.Location = new System.Drawing.Point(951, 412);
             this.btnF3.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnF3.Name = "btnF3";
             this.btnF3.Size = new System.Drawing.Size(162, 70);
@@ -253,7 +255,7 @@
             this.btnE3.BackColor = System.Drawing.SystemColors.Control;
             this.btnE3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnE3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnE3.Location = new System.Drawing.Point(751, 341);
+            this.btnE3.Location = new System.Drawing.Point(767, 412);
             this.btnE3.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnE3.Name = "btnE3";
             this.btnE3.Size = new System.Drawing.Size(162, 70);
@@ -267,7 +269,7 @@
             this.btnD3.BackColor = System.Drawing.SystemColors.Control;
             this.btnD3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnD3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnD3.Location = new System.Drawing.Point(567, 341);
+            this.btnD3.Location = new System.Drawing.Point(583, 412);
             this.btnD3.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnD3.Name = "btnD3";
             this.btnD3.Size = new System.Drawing.Size(162, 70);
@@ -281,7 +283,7 @@
             this.btnC3.BackColor = System.Drawing.SystemColors.Control;
             this.btnC3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnC3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnC3.Location = new System.Drawing.Point(383, 341);
+            this.btnC3.Location = new System.Drawing.Point(399, 412);
             this.btnC3.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnC3.Name = "btnC3";
             this.btnC3.Size = new System.Drawing.Size(162, 70);
@@ -295,7 +297,7 @@
             this.btnB3.BackColor = System.Drawing.SystemColors.Control;
             this.btnB3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnB3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnB3.Location = new System.Drawing.Point(199, 341);
+            this.btnB3.Location = new System.Drawing.Point(215, 412);
             this.btnB3.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnB3.Name = "btnB3";
             this.btnB3.Size = new System.Drawing.Size(162, 70);
@@ -309,7 +311,7 @@
             this.btnA3.BackColor = System.Drawing.SystemColors.Control;
             this.btnA3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnA3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnA3.Location = new System.Drawing.Point(15, 341);
+            this.btnA3.Location = new System.Drawing.Point(31, 412);
             this.btnA3.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnA3.Name = "btnA3";
             this.btnA3.Size = new System.Drawing.Size(162, 70);
@@ -323,7 +325,7 @@
             this.btnF4.BackColor = System.Drawing.SystemColors.Control;
             this.btnF4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnF4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnF4.Location = new System.Drawing.Point(935, 442);
+            this.btnF4.Location = new System.Drawing.Point(951, 513);
             this.btnF4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnF4.Name = "btnF4";
             this.btnF4.Size = new System.Drawing.Size(162, 70);
@@ -337,7 +339,7 @@
             this.btnE4.BackColor = System.Drawing.SystemColors.Control;
             this.btnE4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnE4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnE4.Location = new System.Drawing.Point(751, 442);
+            this.btnE4.Location = new System.Drawing.Point(767, 513);
             this.btnE4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnE4.Name = "btnE4";
             this.btnE4.Size = new System.Drawing.Size(162, 70);
@@ -351,7 +353,7 @@
             this.btnD4.BackColor = System.Drawing.SystemColors.Control;
             this.btnD4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnD4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnD4.Location = new System.Drawing.Point(567, 442);
+            this.btnD4.Location = new System.Drawing.Point(583, 513);
             this.btnD4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnD4.Name = "btnD4";
             this.btnD4.Size = new System.Drawing.Size(162, 70);
@@ -365,7 +367,7 @@
             this.btnC4.BackColor = System.Drawing.SystemColors.Control;
             this.btnC4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnC4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnC4.Location = new System.Drawing.Point(383, 442);
+            this.btnC4.Location = new System.Drawing.Point(399, 513);
             this.btnC4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnC4.Name = "btnC4";
             this.btnC4.Size = new System.Drawing.Size(162, 70);
@@ -379,7 +381,7 @@
             this.btnB4.BackColor = System.Drawing.SystemColors.Control;
             this.btnB4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnB4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnB4.Location = new System.Drawing.Point(199, 442);
+            this.btnB4.Location = new System.Drawing.Point(215, 513);
             this.btnB4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnB4.Name = "btnB4";
             this.btnB4.Size = new System.Drawing.Size(162, 70);
@@ -393,7 +395,7 @@
             this.btnA4.BackColor = System.Drawing.SystemColors.Control;
             this.btnA4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnA4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnA4.Location = new System.Drawing.Point(15, 442);
+            this.btnA4.Location = new System.Drawing.Point(31, 513);
             this.btnA4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnA4.Name = "btnA4";
             this.btnA4.Size = new System.Drawing.Size(162, 70);
@@ -407,7 +409,7 @@
             this.btnF5.BackColor = System.Drawing.SystemColors.Control;
             this.btnF5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnF5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnF5.Location = new System.Drawing.Point(935, 543);
+            this.btnF5.Location = new System.Drawing.Point(951, 614);
             this.btnF5.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnF5.Name = "btnF5";
             this.btnF5.Size = new System.Drawing.Size(162, 70);
@@ -421,7 +423,7 @@
             this.btnE5.BackColor = System.Drawing.SystemColors.Control;
             this.btnE5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnE5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnE5.Location = new System.Drawing.Point(751, 543);
+            this.btnE5.Location = new System.Drawing.Point(767, 614);
             this.btnE5.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnE5.Name = "btnE5";
             this.btnE5.Size = new System.Drawing.Size(162, 70);
@@ -435,7 +437,7 @@
             this.btnD5.BackColor = System.Drawing.SystemColors.Control;
             this.btnD5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnD5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnD5.Location = new System.Drawing.Point(567, 543);
+            this.btnD5.Location = new System.Drawing.Point(583, 614);
             this.btnD5.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnD5.Name = "btnD5";
             this.btnD5.Size = new System.Drawing.Size(162, 70);
@@ -449,7 +451,7 @@
             this.btnC5.BackColor = System.Drawing.SystemColors.Control;
             this.btnC5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnC5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnC5.Location = new System.Drawing.Point(383, 543);
+            this.btnC5.Location = new System.Drawing.Point(399, 614);
             this.btnC5.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnC5.Name = "btnC5";
             this.btnC5.Size = new System.Drawing.Size(162, 70);
@@ -463,7 +465,7 @@
             this.btnB5.BackColor = System.Drawing.SystemColors.Control;
             this.btnB5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnB5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnB5.Location = new System.Drawing.Point(199, 543);
+            this.btnB5.Location = new System.Drawing.Point(215, 614);
             this.btnB5.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnB5.Name = "btnB5";
             this.btnB5.Size = new System.Drawing.Size(162, 70);
@@ -477,7 +479,7 @@
             this.btnA5.BackColor = System.Drawing.SystemColors.Control;
             this.btnA5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnA5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnA5.Location = new System.Drawing.Point(15, 543);
+            this.btnA5.Location = new System.Drawing.Point(31, 614);
             this.btnA5.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnA5.Name = "btnA5";
             this.btnA5.Size = new System.Drawing.Size(162, 70);
@@ -491,7 +493,7 @@
             this.lblA.BackColor = System.Drawing.Color.SlateGray;
             this.lblA.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblA.ForeColor = System.Drawing.Color.Snow;
-            this.lblA.Location = new System.Drawing.Point(15, 36);
+            this.lblA.Location = new System.Drawing.Point(31, 107);
             this.lblA.Name = "lblA";
             this.lblA.Size = new System.Drawing.Size(162, 70);
             this.lblA.TabIndex = 30;
@@ -503,7 +505,7 @@
             this.lblB.BackColor = System.Drawing.Color.SlateGray;
             this.lblB.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblB.ForeColor = System.Drawing.Color.Snow;
-            this.lblB.Location = new System.Drawing.Point(199, 36);
+            this.lblB.Location = new System.Drawing.Point(215, 107);
             this.lblB.Name = "lblB";
             this.lblB.Size = new System.Drawing.Size(162, 70);
             this.lblB.TabIndex = 31;
@@ -515,7 +517,7 @@
             this.lblC.BackColor = System.Drawing.Color.SlateGray;
             this.lblC.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblC.ForeColor = System.Drawing.Color.Snow;
-            this.lblC.Location = new System.Drawing.Point(383, 36);
+            this.lblC.Location = new System.Drawing.Point(399, 107);
             this.lblC.Name = "lblC";
             this.lblC.Size = new System.Drawing.Size(162, 70);
             this.lblC.TabIndex = 32;
@@ -527,7 +529,7 @@
             this.lblD.BackColor = System.Drawing.Color.SlateGray;
             this.lblD.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblD.ForeColor = System.Drawing.Color.Snow;
-            this.lblD.Location = new System.Drawing.Point(567, 36);
+            this.lblD.Location = new System.Drawing.Point(583, 107);
             this.lblD.Name = "lblD";
             this.lblD.Size = new System.Drawing.Size(162, 70);
             this.lblD.TabIndex = 33;
@@ -539,7 +541,7 @@
             this.lblE.BackColor = System.Drawing.Color.SlateGray;
             this.lblE.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblE.ForeColor = System.Drawing.Color.Snow;
-            this.lblE.Location = new System.Drawing.Point(751, 36);
+            this.lblE.Location = new System.Drawing.Point(767, 107);
             this.lblE.Name = "lblE";
             this.lblE.Size = new System.Drawing.Size(162, 70);
             this.lblE.TabIndex = 34;
@@ -551,19 +553,43 @@
             this.lblF.BackColor = System.Drawing.Color.SlateGray;
             this.lblF.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblF.ForeColor = System.Drawing.Color.Snow;
-            this.lblF.Location = new System.Drawing.Point(935, 36);
+            this.lblF.Location = new System.Drawing.Point(951, 107);
             this.lblF.Name = "lblF";
             this.lblF.Size = new System.Drawing.Size(162, 70);
             this.lblF.TabIndex = 35;
             this.lblF.Text = "label1";
             this.lblF.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.ForeColor = System.Drawing.Color.Snow;
+            this.lblScore.Location = new System.Drawing.Point(28, 21);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(124, 32);
+            this.lblScore.TabIndex = 36;
+            this.lblScore.Text = "Score: 0";
+            // 
+            // lblLastQuestion
+            // 
+            this.lblLastQuestion.AutoSize = true;
+            this.lblLastQuestion.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastQuestion.ForeColor = System.Drawing.Color.Snow;
+            this.lblLastQuestion.Location = new System.Drawing.Point(393, 21);
+            this.lblLastQuestion.Name = "lblLastQuestion";
+            this.lblLastQuestion.Size = new System.Drawing.Size(113, 32);
+            this.lblLastQuestion.TabIndex = 37;
+            this.lblLastQuestion.Text = "Correct";
+            // 
             // frmJeopardyBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1129, 665);
+            this.ClientSize = new System.Drawing.Size(1143, 717);
+            this.Controls.Add(this.lblLastQuestion);
+            this.Controls.Add(this.lblScore);
             this.Controls.Add(this.lblF);
             this.Controls.Add(this.lblE);
             this.Controls.Add(this.lblD);
@@ -606,6 +632,7 @@
             this.Text = "Jeopardy - User";
             this.Load += new System.EventHandler(this.frmJeopardyBoard_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -647,5 +674,7 @@
         private System.Windows.Forms.Label lblD;
         private System.Windows.Forms.Label lblE;
         private System.Windows.Forms.Label lblF;
+        private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Label lblLastQuestion;
     }
 }

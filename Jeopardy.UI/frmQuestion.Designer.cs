@@ -29,57 +29,61 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnA = new System.Windows.Forms.Button();
-            this.btnB = new System.Windows.Forms.Button();
-            this.btnD = new System.Windows.Forms.Button();
-            this.btnC = new System.Windows.Forms.Button();
+            this.btn1 = new System.Windows.Forms.Button();
+            this.btn2 = new System.Windows.Forms.Button();
+            this.btn3 = new System.Windows.Forms.Button();
+            this.btn4 = new System.Windows.Forms.Button();
             this.lblDescription = new System.Windows.Forms.Label();
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // btnA
+            // btn1
             // 
-            this.btnA.BackColor = System.Drawing.SystemColors.Control;
-            this.btnA.Location = new System.Drawing.Point(80, 255);
-            this.btnA.Margin = new System.Windows.Forms.Padding(6);
-            this.btnA.Name = "btnA";
-            this.btnA.Size = new System.Drawing.Size(145, 70);
-            this.btnA.TabIndex = 0;
-            this.btnA.Text = "button1";
-            this.btnA.UseVisualStyleBackColor = false;
+            this.btn1.BackColor = System.Drawing.SystemColors.Control;
+            this.btn1.Location = new System.Drawing.Point(80, 255);
+            this.btn1.Margin = new System.Windows.Forms.Padding(6);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(145, 70);
+            this.btn1.TabIndex = 0;
+            this.btn1.Text = "button1";
+            this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Click += new System.EventHandler(this.Button_Clicked);
             // 
-            // btnB
+            // btn2
             // 
-            this.btnB.BackColor = System.Drawing.SystemColors.Control;
-            this.btnB.Location = new System.Drawing.Point(258, 255);
-            this.btnB.Margin = new System.Windows.Forms.Padding(6);
-            this.btnB.Name = "btnB";
-            this.btnB.Size = new System.Drawing.Size(145, 70);
-            this.btnB.TabIndex = 1;
-            this.btnB.Text = "button2";
-            this.btnB.UseVisualStyleBackColor = false;
+            this.btn2.BackColor = System.Drawing.SystemColors.Control;
+            this.btn2.Location = new System.Drawing.Point(258, 255);
+            this.btn2.Margin = new System.Windows.Forms.Padding(6);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(145, 70);
+            this.btn2.TabIndex = 1;
+            this.btn2.Text = "button2";
+            this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Click += new System.EventHandler(this.Button_Clicked);
             // 
-            // btnD
+            // btn3
             // 
-            this.btnD.BackColor = System.Drawing.SystemColors.Control;
-            this.btnD.Location = new System.Drawing.Point(80, 356);
-            this.btnD.Margin = new System.Windows.Forms.Padding(6);
-            this.btnD.Name = "btnD";
-            this.btnD.Size = new System.Drawing.Size(145, 70);
-            this.btnD.TabIndex = 3;
-            this.btnD.Text = "button3";
-            this.btnD.UseVisualStyleBackColor = false;
+            this.btn3.BackColor = System.Drawing.SystemColors.Control;
+            this.btn3.Location = new System.Drawing.Point(80, 356);
+            this.btn3.Margin = new System.Windows.Forms.Padding(6);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(145, 70);
+            this.btn3.TabIndex = 3;
+            this.btn3.Text = "button3";
+            this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Click += new System.EventHandler(this.Button_Clicked);
             // 
-            // btnC
+            // btn4
             // 
-            this.btnC.BackColor = System.Drawing.SystemColors.Control;
-            this.btnC.Location = new System.Drawing.Point(258, 356);
-            this.btnC.Margin = new System.Windows.Forms.Padding(6);
-            this.btnC.Name = "btnC";
-            this.btnC.Size = new System.Drawing.Size(145, 70);
-            this.btnC.TabIndex = 2;
-            this.btnC.Text = "button4";
-            this.btnC.UseVisualStyleBackColor = false;
+            this.btn4.BackColor = System.Drawing.SystemColors.Control;
+            this.btn4.Location = new System.Drawing.Point(258, 356);
+            this.btn4.Margin = new System.Windows.Forms.Padding(6);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(145, 70);
+            this.btn4.TabIndex = 2;
+            this.btn4.Text = "button4";
+            this.btn4.UseVisualStyleBackColor = false;
+            this.btn4.Click += new System.EventHandler(this.Button_Clicked);
             // 
             // lblDescription
             // 
@@ -104,10 +108,10 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(482, 451);
             this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.btnD);
-            this.Controls.Add(this.btnC);
-            this.Controls.Add(this.btnB);
-            this.Controls.Add(this.btnA);
+            this.Controls.Add(this.btn3);
+            this.Controls.Add(this.btn4);
+            this.Controls.Add(this.btn2);
+            this.Controls.Add(this.btn1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmQuestion";
@@ -119,10 +123,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnA;
-        private System.Windows.Forms.Button btnB;
-        private System.Windows.Forms.Button btnD;
-        private System.Windows.Forms.Button btnC;
+        private System.Windows.Forms.Button btn1;
+        private System.Windows.Forms.Button btn2;
+        private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.Button btn4;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Timer tmrClock;
     }
