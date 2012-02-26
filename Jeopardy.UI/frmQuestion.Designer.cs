@@ -106,7 +106,7 @@
             // 
             // tmrClock
             // 
-            this.tmrClock.Interval = 5000;
+            this.tmrClock.Interval = 8000;
             this.tmrClock.Tick += new System.EventHandler(this.tmrClock_Tick);
             // 
             // frmQuestion
