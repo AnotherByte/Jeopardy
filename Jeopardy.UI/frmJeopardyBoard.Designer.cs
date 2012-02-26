@@ -573,14 +573,14 @@
             // 
             // lblLastQuestion
             // 
-            this.lblLastQuestion.AutoSize = true;
             this.lblLastQuestion.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastQuestion.ForeColor = System.Drawing.Color.Snow;
-            this.lblLastQuestion.Location = new System.Drawing.Point(393, 21);
+            this.lblLastQuestion.Location = new System.Drawing.Point(306, 21);
             this.lblLastQuestion.Name = "lblLastQuestion";
-            this.lblLastQuestion.Size = new System.Drawing.Size(113, 32);
+            this.lblLastQuestion.Size = new System.Drawing.Size(530, 32);
             this.lblLastQuestion.TabIndex = 37;
             this.lblLastQuestion.Text = "Correct";
+            this.lblLastQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmJeopardyBoard
             // 

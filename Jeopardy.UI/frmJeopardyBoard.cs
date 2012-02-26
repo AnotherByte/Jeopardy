@@ -121,13 +121,17 @@ namespace Jeopardy.UI
                 if (oQuestionForm.AnsweredCorrect)
                 {
                     iScore += oCategory.Items[iQuestID - 1].Cost;
+                    lblLastQuestion.Text = "Correct!";
                 }
                 else
                 {
                     iScore -= oCategory.Items[iQuestID - 1].Cost;
+                    string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
+                    lblLastQuestion.Text = string.Format("Incorrect, answer was: {0}", sAnswerDescription);
                 }
                 lblScore.Text = string.Format("Score: {0}" , iScore);
 
+                btnQuestion.Enabled = false;
             }
         }
 
@@ -135,6 +139,7 @@ namespace Jeopardy.UI
         {
             // bring in user name
             this.Text = string.Format("Jeopardy - {0}", oCurrentUser.Description.ToString());
+            lblLastQuestion.Text = string.Empty;
 
             // load up categories
             oCategories = new cCategories();

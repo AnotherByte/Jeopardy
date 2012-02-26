@@ -39,6 +39,7 @@ namespace Jeopardy.UI
 
         private void frmQuestion_Load(object sender, EventArgs e)
         {
+            this.Text = string.Format("${0} Question", oCurrentQuestion.Cost);
             lblDescription.Text = oCurrentQuestion.Description;
 
             for (int x = 0; x < oCurrentQuestion.Items.Count; x++ )
