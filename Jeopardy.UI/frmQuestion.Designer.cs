@@ -46,6 +46,7 @@
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(145, 70);
             this.btn1.TabIndex = 0;
+            this.btn1.TabStop = false;
             this.btn1.Text = "button1";
             this.btn1.UseVisualStyleBackColor = false;
             this.btn1.Click += new System.EventHandler(this.Button_Clicked);
@@ -59,6 +60,7 @@
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(145, 70);
             this.btn2.TabIndex = 1;
+            this.btn2.TabStop = false;
             this.btn2.Text = "button2";
             this.btn2.UseVisualStyleBackColor = false;
             this.btn2.Click += new System.EventHandler(this.Button_Clicked);
@@ -72,6 +74,7 @@
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(145, 70);
             this.btn3.TabIndex = 3;
+            this.btn3.TabStop = false;
             this.btn3.Text = "button3";
             this.btn3.UseVisualStyleBackColor = false;
             this.btn3.Click += new System.EventHandler(this.Button_Clicked);
@@ -85,6 +88,7 @@
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(145, 70);
             this.btn4.TabIndex = 2;
+            this.btn4.TabStop = false;
             this.btn4.Text = "button4";
             this.btn4.UseVisualStyleBackColor = false;
             this.btn4.Click += new System.EventHandler(this.Button_Clicked);
@@ -111,14 +115,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(482, 451);
+            this.ControlBox = false;
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.btn3);
             this.Controls.Add(this.btn4);
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmQuestion";
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQuestion";
             this.Load += new System.EventHandler(this.frmQuestion_Load);

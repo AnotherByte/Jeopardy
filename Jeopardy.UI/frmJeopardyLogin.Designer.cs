@@ -57,7 +57,9 @@
             this.ClientSize = new System.Drawing.Size(306, 344);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lstUsers);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmJeopardyLogin";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jeopardy Login";
             this.ResumeLayout(false);
