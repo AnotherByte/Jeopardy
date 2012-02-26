@@ -40,6 +40,7 @@
             // btn1
             // 
             this.btn1.BackColor = System.Drawing.SystemColors.Control;
+            this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.Location = new System.Drawing.Point(80, 255);
             this.btn1.Margin = new System.Windows.Forms.Padding(6);
             this.btn1.Name = "btn1";
@@ -52,6 +53,7 @@
             // btn2
             // 
             this.btn2.BackColor = System.Drawing.SystemColors.Control;
+            this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.Location = new System.Drawing.Point(258, 255);
             this.btn2.Margin = new System.Windows.Forms.Padding(6);
             this.btn2.Name = "btn2";
@@ -64,6 +66,7 @@
             // btn3
             // 
             this.btn3.BackColor = System.Drawing.SystemColors.Control;
+            this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.Location = new System.Drawing.Point(80, 356);
             this.btn3.Margin = new System.Windows.Forms.Padding(6);
             this.btn3.Name = "btn3";
@@ -76,6 +79,7 @@
             // btn4
             // 
             this.btn4.BackColor = System.Drawing.SystemColors.Control;
+            this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.Location = new System.Drawing.Point(258, 356);
             this.btn4.Margin = new System.Windows.Forms.Padding(6);
             this.btn4.Name = "btn4";
@@ -115,6 +119,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmQuestion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQuestion";
             this.Load += new System.EventHandler(this.frmQuestion_Load);
             this.ResumeLayout(false);

@@ -577,10 +577,10 @@
             this.lblLastQuestion.ForeColor = System.Drawing.Color.Snow;
             this.lblLastQuestion.Location = new System.Drawing.Point(306, 21);
             this.lblLastQuestion.Name = "lblLastQuestion";
-            this.lblLastQuestion.Size = new System.Drawing.Size(530, 32);
+            this.lblLastQuestion.Size = new System.Drawing.Size(530, 65);
             this.lblLastQuestion.TabIndex = 37;
             this.lblLastQuestion.Text = "Correct";
-            this.lblLastQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLastQuestion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmJeopardyBoard
             // 
@@ -629,6 +629,7 @@
             this.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "frmJeopardyBoard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jeopardy - User";
             this.Load += new System.EventHandler(this.frmJeopardyBoard_Load);
             this.ResumeLayout(false);

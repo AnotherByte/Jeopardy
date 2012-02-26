@@ -58,6 +58,7 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lstUsers);
             this.Name = "frmJeopardyLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jeopardy Login";
             this.ResumeLayout(false);
 
