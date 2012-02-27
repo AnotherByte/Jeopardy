@@ -134,5 +134,11 @@ namespace Jeopardy.DL
 
             return unused;
         }
+
+        // add data to database
+        static public bool SQLInsert(string sql)
+        {
+            return (ExecuteNonQuery(sql) == 1);
+        }
     }
 }

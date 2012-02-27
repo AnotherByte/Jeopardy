@@ -1,0 +1,14 @@
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\bin\Debug\Jeopardy.Input.exe
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\bin\Debug\Jeopardy.Input.pdb
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\bin\Debug\Jeopardy.DL.dll
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\bin\Debug\System.Data.SQLite.dll
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\bin\Debug\Jeopardy.DL.pdb
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\bin\Debug\System.Data.SQLite.pdb
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\bin\Debug\System.Data.SQLite.xml
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\obj\x86\Debug\Jeopardy.Input.frmInput.resources
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\obj\x86\Debug\Jeopardy.Input.Properties.Resources.resources
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\obj\x86\Debug\Jeopardy.Input.exe
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.Input\obj\x86\Debug\Jeopardy.Input.pdb

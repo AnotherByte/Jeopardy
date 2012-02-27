@@ -99,6 +99,10 @@
       <Project>{E7CC15F0-CF13-4AF4-926C-DCB3332BD140}</Project>
       <Name>Jeopardy.BL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Jeopardy.Input\Jeopardy.Input.csproj">
+      <Project>{7D246692-936C-480F-BE4B-5B71E568D92B}</Project>
+      <Name>Jeopardy.Input</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

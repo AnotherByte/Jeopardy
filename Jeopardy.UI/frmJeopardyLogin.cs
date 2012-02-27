@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Jeopardy.BL;
+using Jeopardy.Input;
 
 namespace Jeopardy.UI
 {
@@ -38,6 +39,13 @@ namespace Jeopardy.UI
                 oBoard.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void btnInputForm_Click(object sender, EventArgs e)
+        {
+            frmInput oInputForm = new frmInput();
+            oInputForm.ShowDialog();
+            this.Close();
         }
     }
 }

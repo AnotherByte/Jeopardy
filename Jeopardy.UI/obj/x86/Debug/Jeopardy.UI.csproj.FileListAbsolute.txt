@@ -16,3 +16,5 @@ C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\obj\x86\Debug\Ge
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\obj\x86\Debug\Jeopardy.UI.exe
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\obj\x86\Debug\Jeopardy.UI.pdb
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\obj\x86\Debug\Jeopardy.UI.frmQuestion.resources
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\bin\Debug\Jeopardy.Input.exe
+C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\bin\Debug\Jeopardy.Input.pdb
