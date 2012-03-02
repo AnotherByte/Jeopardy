@@ -10,6 +10,24 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jeopardy.Input", "Jeopardy.Input\Jeopardy.Input.csproj", "{7D246692-936C-480F-BE4B-5B71E568D92B}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.4.169.18:8080/tfs/advanced%20programming
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Jeopardy.BL\\Jeopardy.BL.csproj
+		SccProjectName1 = Jeopardy.BL
+		SccLocalPath1 = Jeopardy.BL
+		SccProjectUniqueName2 = Jeopardy.DL\\Jeopardy.DL.csproj
+		SccProjectName2 = Jeopardy.DL
+		SccLocalPath2 = Jeopardy.DL
+		SccProjectUniqueName3 = Jeopardy.Input\\Jeopardy.Input.csproj
+		SccProjectName3 = Jeopardy.Input
+		SccLocalPath3 = Jeopardy.Input
+		SccProjectUniqueName4 = Jeopardy.UI\\Jeopardy.UI.csproj
+		SccProjectName4 = Jeopardy.UI
+		SccLocalPath4 = Jeopardy.UI
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms

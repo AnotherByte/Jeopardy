@@ -14,6 +14,7 @@ namespace Jeopardy.UI
     {
         private Button[,] arButtons;
         private cUser oCurrentUser;
+        private string sDailyDouble;
         cCategories oCategories;
         cCategory oCategory;
 
@@ -25,7 +26,9 @@ namespace Jeopardy.UI
             InitializeComponent();
 
             oCurrentUser = oUser;
-
+            Random rand = new Random();
+            sDailyDouble = char.ConvertFromUtf32(rand.Next(65, 70)) + rand.Next(1,6).ToString();
+            
             #region button array
 
             // create array for buttons
@@ -78,6 +81,13 @@ namespace Jeopardy.UI
             }
 
             #endregion
+
+            // display daily double
+            int iQuestNum, iCatNum;
+            iCatNum = char.ConvertToUtf32(sDailyDouble, 0) - 65;
+            int.TryParse(sDailyDouble[1].ToString(), out iQuestNum);
+            iQuestNum--;
+            arButtons[iCatNum, iQuestNum].Text = string.Format("{0}, {1}{2}", sDailyDouble, iCatNum, iQuestNum);
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -113,25 +123,52 @@ namespace Jeopardy.UI
                 }
                 int iQuestID;
                 int.TryParse(sQuestion.Remove(0, 1), out iQuestID);
-                frmQuestion oQuestionForm = new frmQuestion(oCategory.Items[iQuestID-1]);
-                oQuestionForm.ShowDialog();
 
+                int iCost;
+
+                // check for daily double
+                if (sQuestion == sDailyDouble)
+                {
+                    // is daily double
+                    frmBetQuestion oBetQuestionForm = new frmBetQuestion(oCategories.Items[char.ConvertToUtf32(sQuestion, 0) - 65].Description, oCategory.Items[iQuestID - 1], iScore, false);
+                    oBetQuestionForm.ShowDialog();
+
+                    iCost = oBetQuestionForm.Bet;
+                }
+                else
+                {
+                    iCost = oCategory.Items[iQuestID - 1].Cost;
+                }
+
+
+                frmQuestion oQuestionForm = new frmQuestion(oCategory.Items[iQuestID - 1]);
+                oQuestionForm.ShowDialog();
 
                 // manage score
                 if (oQuestionForm.AnsweredCorrect)
                 {
-                    iScore += oCategory.Items[iQuestID - 1].Cost;
+                    iScore += iCost;
                     lblLastQuestion.Text = "Correct!";
                 }
                 else
                 {
-                    iScore -= oCategory.Items[iQuestID - 1].Cost;
+                    iScore -= iCost;
                     string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
                     lblLastQuestion.Text = string.Format("Incorrect, answer was: {0}", sAnswerDescription);
                 }
-                lblScore.Text = string.Format("Score: {0}" , iScore);
+                lblScore.Text = string.Format("Score: {0}", iScore);
 
                 btnQuestion.Enabled = false;
+
+                if (CheckForEnd())
+                {
+                    // all questions used, final jeopardy
+                    frmBetQuestion oFinalQuestionForm = new frmBetQuestion();
+
+                    oFinalQuestionForm.ShowDialog();
+                    iScore = oFinalQuestionForm.UserScore;
+                    lblScore.Text = string.Format("Score: {0}", iScore);
+                }
             }
         }
 
@@ -159,6 +196,21 @@ namespace Jeopardy.UI
                 oCat.FillCategory();
             }
 
+        }
+
+        private bool CheckForEnd()  // true if game over
+        {
+            bool end = true;    // set that game is over
+
+            foreach (Button btn in arButtons)
+            {
+                if (btn.Enabled)
+                {
+                    // button/question not yet used
+                    end = false;    // game not over yet
+                }
+            }
+            return end;
         }
     }
 }

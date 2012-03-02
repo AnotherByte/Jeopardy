@@ -12,3 +12,8 @@ C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\bin\Debug\System
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\obj\Debug\Jeopardy.DL.dll
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\obj\Debug\Jeopardy.DL.pdb
+C:\Users\200130283\Desktop\Jeopardy\Jeopardy.DL\bin\Debug\Jeopardy.DL.dll
+C:\Users\200130283\Desktop\Jeopardy\Jeopardy.DL\bin\Debug\Jeopardy.DL.pdb
+C:\Users\200130283\Desktop\Jeopardy\Jeopardy.DL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\200130283\Desktop\Jeopardy\Jeopardy.DL\obj\Debug\Jeopardy.DL.dll
+C:\Users\200130283\Desktop\Jeopardy\Jeopardy.DL\obj\Debug\Jeopardy.DL.pdb
