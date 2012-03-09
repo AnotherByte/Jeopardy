@@ -102,6 +102,7 @@
             this.Controls.Add(this.lblStartScore);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmBetQuestion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Bet Question";
             this.ResumeLayout(false);
             this.PerformLayout();

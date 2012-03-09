@@ -19,12 +19,12 @@ namespace Jeopardy.Input
 
         private void btnAddCat_Click(object sender, EventArgs e)
         {
-            int iID;
+            //int iID;
             int bFinal = 0;
             string sDescription;
             int bUsed = 0;
 
-            int.TryParse(txtCID.Text , out iID);
+            //int.TryParse(txtCID.Text , out iID);
             if (chkCFinal.Checked)
                 bFinal = 1;
             sDescription = txtCDescription.Text;
@@ -40,12 +40,12 @@ namespace Jeopardy.Input
 
         private void btnAddQuest_Click(object sender, EventArgs e)
         {
-            int iID;
+            //int iID;
             int iCID;
             string sDescription;
             int iCost;
 
-            int.TryParse(txtQID.Text, out iID);
+            //int.TryParse(txtQID.Text, out iID);
             int.TryParse(txtQCID.Text, out iCID);
             sDescription = txtQDescription.Text;
             int.TryParse(txtQCost.Text, out iCost);
@@ -60,12 +60,12 @@ namespace Jeopardy.Input
 
         private void btnAddAns_Click(object sender, EventArgs e)
         {
-            int iID;
+            //int iID;
             int iQID;
             string sDescription;
             int bCorrect = 0;
 
-            int.TryParse(txtAID.Text, out iID);
+            //int.TryParse(txtAID.Text, out iID);
             int.TryParse(txtAQID.Text, out iQID);
             sDescription = txtADescription.Text;
             if (chkACorrect.Checked)

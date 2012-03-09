@@ -77,13 +77,32 @@ namespace Jeopardy.DL
             return ExecuteQuery("select * from tbl_user");
         }
 
-
         // returns datatable of tbl_category (UNUSED category and NOT final jeopardy)
         static public DataTable GetCategory(string sIDs)
         {
             // set categories used
             ExecuteNonQuery(string.Format("update tbl_category set category_used = 1 where category_id in ({0})", sIDs));
             return ExecuteQuery(string.Format("select * from tbl_category where category_id in ({0})", sIDs));
+        }
+
+        // returns datatable of tbl_category (UNUSED category and IS final jeopardy)
+        static public DataTable GetFinalCategory()
+        {
+            // check if enough unused
+            if (GetUnusedCategory(1) < 1)
+            {
+                // too few categories remain, reset
+                ResetCategories(1);
+            }
+
+            // get random unused, final jeopardy category id
+            int id;
+            int.TryParse(ExecuteQuery("SELECT category_id FROM tbl_category WHERE category_is_final=1 and category_used = 0 ORDER BY RANDOM() LIMIT 1").Rows[0]["category_id"].ToString(), out id);
+
+            // mark used
+            ExecuteNonQuery(string.Format("update tbl_category set category_used = 1 where category_id = {0}", id));
+            //get datatable with random id
+            return ExecuteQuery(string.Format("SELECT * FROM tbl_category WHERE category_id = {0}", id));
         }
 
         // returns datatable of tbl_question
@@ -98,27 +117,26 @@ namespace Jeopardy.DL
             return ExecuteQuery(string.Format("select * from tbl_answer where question_id = {0}", ID));
         }
 
-
         // get # of UNUSED categories
-        static private int GetUnusedCategory()
+        static private int GetUnusedCategory(int viFinal)
         {
-            return ExecuteNonQuery("select count(category_used) from tbl_category where category_used = 0");
+            return ExecuteNonQuery(string.Format("select count(category_used) from tbl_category where category_used = 0 and category_is_final = {0}", viFinal));
         }
 
         // reset used categories
-        static private int ResetCategories()
+        static private int ResetCategories(int viFinal)
         {
-            return ExecuteNonQuery("update tbl_category set category_used = 0");
+            return ExecuteNonQuery(string.Format("update tbl_category set category_used = 0 and category_is_final = {0}", viFinal));
         }
 
         // get array of unused categories
         static public List<int> UnusedCategoryList()
         {
             // check if enough unused
-            if (GetUnusedCategory() < 6)
+            if (GetUnusedCategory(0) < 6)
             {
                 // too few categories remain, reset
-                ResetCategories();
+                ResetCategories(0);
             }
 
             DataTable dtUnusedID = ExecuteQuery("select category_id from tbl_category where (category_used = 0 AND category_is_final = 0)");

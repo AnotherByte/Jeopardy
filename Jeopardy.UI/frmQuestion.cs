@@ -28,7 +28,6 @@ namespace Jeopardy.UI
             InitializeComponent();
 
             oCurrentQuestion = oQuest;
-            oQuest.FillQuestion();
 
             arButtons = new Button[4];
             arButtons[0] = btn1;
@@ -39,6 +38,7 @@ namespace Jeopardy.UI
 
         private void frmQuestion_Load(object sender, EventArgs e)
         {
+            oCurrentQuestion.FillQuestion();
             this.Text = string.Format("${0} Question", oCurrentQuestion.Cost);
             lblDescription.Text = oCurrentQuestion.Description;
 
@@ -53,7 +53,7 @@ namespace Jeopardy.UI
         private void tmrClock_Tick(object sender, EventArgs e)
         {
             tmrClock.Stop();
-            this.Close();
+            //this.Close();
         }
 
         private void Button_Clicked(object sender, EventArgs e)

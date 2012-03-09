@@ -148,7 +148,8 @@ namespace Jeopardy.UI
                 if (oQuestionForm.AnsweredCorrect)
                 {
                     iScore += iCost;
-                    lblLastQuestion.Text = "Correct!";
+                    string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
+                    lblLastQuestion.Text = string.Format("{0} is Correct!", sAnswerDescription);
                 }
                 else
                 {
@@ -163,10 +164,33 @@ namespace Jeopardy.UI
                 if (CheckForEnd())
                 {
                     // all questions used, final jeopardy
-                    frmBetQuestion oFinalQuestionForm = new frmBetQuestion();
 
+                    oCategory = new cCategory();
+                    oCategory.FillFinal();
+                    oCategory.FillCategory();
+
+                    frmBetQuestion oFinalQuestionForm = new frmBetQuestion(oCategory.Description, oCategory.Items[0], iScore, true);
                     oFinalQuestionForm.ShowDialog();
-                    iScore = oFinalQuestionForm.UserScore;
+
+                    iCost = oFinalQuestionForm.Bet;
+
+                    oQuestionForm = new frmQuestion(oCategory.Items[0]);
+                    oQuestionForm.ShowDialog();
+
+                    // manage score
+                    if (oQuestionForm.AnsweredCorrect)
+                    {
+                        iScore += iCost;
+                        string sAnswerDescription = oCategory.Items[0].Items[oCategory.Items[0].CorrectAnswerID].Description;
+                        lblLastQuestion.Text = string.Format("{0} is Correct!", sAnswerDescription);
+                    }
+                    else
+                    {
+                        iScore -= iCost;
+                        string sAnswerDescription = oCategory.Items[0].Items[oCategory.Items[0].CorrectAnswerID].Description;
+                        lblLastQuestion.Text = string.Format("Incorrect, answer was: {0}", sAnswerDescription);
+                    }
+
                     lblScore.Text = string.Format("Score: {0}", iScore);
                 }
             }

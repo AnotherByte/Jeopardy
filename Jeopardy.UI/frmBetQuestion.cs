@@ -29,9 +29,6 @@ namespace Jeopardy.UI
         private bool bFinal;
         private cQuestion oQuestion;
 
-        public frmBetQuestion()
-        {
-        }
 
         public frmBetQuestion(string vsDescription, cQuestion voQuestion, int viScore, bool vbIsFinal)
         {

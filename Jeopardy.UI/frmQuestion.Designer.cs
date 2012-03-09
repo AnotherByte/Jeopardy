@@ -127,7 +127,7 @@
             this.Name = "frmQuestion";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmQuestion";
             this.Load += new System.EventHandler(this.frmQuestion_Load);
             this.ResumeLayout(false);

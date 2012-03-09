@@ -179,6 +179,12 @@ namespace Jeopardy.BL
             return mcol.Count;
         }
 
+        // fill with final jeopardy question
+        public void FillFinal()
+        {
+            this.Load(DBAccess.GetFinalCategory().Rows[0]);
+        }
+
         // get quetion from question_id (null if not found)
         public cQuestion Item(int vsQuestID)
         {
