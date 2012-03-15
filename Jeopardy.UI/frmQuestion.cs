@@ -42,9 +42,9 @@ namespace Jeopardy.UI
             this.Text = string.Format("${0} Question", oCurrentQuestion.Cost);
             lblDescription.Text = oCurrentQuestion.Description;
 
-            for (int x = 0; x < oCurrentQuestion.Items.Count; x++ )
+            for (int x = 0; x < 4; x++ )
             {
-                arButtons[x].Text = oCurrentQuestion.Items[x].Description;
+                arButtons[x].Text = oCurrentQuestion[x].Description;
             }
 
             tmrClock.Start();

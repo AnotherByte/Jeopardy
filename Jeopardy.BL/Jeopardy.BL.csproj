@@ -48,8 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cGameElements.cs" />
-    <Compile Include="cUserElements.cs" />
+    <Compile Include="CAnswer.cs" />
+    <Compile Include="CCategories.cs" />
+    <Compile Include="CCategory.cs" />
+    <Compile Include="CQuestion.cs" />
+    <Compile Include="CUser.cs" />
+    <Compile Include="CUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

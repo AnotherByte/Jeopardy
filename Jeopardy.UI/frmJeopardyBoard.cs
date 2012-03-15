@@ -103,22 +103,22 @@ namespace Jeopardy.UI
                 switch (sQuestion[0])
                 {
                     case 'A':
-                        oCategory = oCategories.Items[0];
+                        oCategory = oCategories[0];
                         break;
                     case 'B':
-                        oCategory = oCategories.Items[1];
+                        oCategory = oCategories[1];
                         break;
                     case 'C':
-                        oCategory = oCategories.Items[2];
+                        oCategory = oCategories[2];
                         break;
                     case 'D':
-                        oCategory = oCategories.Items[3];
+                        oCategory = oCategories[3];
                         break;
                     case 'E':
-                        oCategory = oCategories.Items[4];
+                        oCategory = oCategories[4];
                         break;
                     case 'F':
-                        oCategory = oCategories.Items[5];
+                        oCategory = oCategories[5];
                         break;
                 }
                 int iQuestID;
@@ -130,39 +130,39 @@ namespace Jeopardy.UI
                 if (sQuestion == sDailyDouble)
                 {
                     // is daily double
-                    frmBetQuestion oBetQuestionForm = new frmBetQuestion(oCategories.Items[char.ConvertToUtf32(sQuestion, 0) - 65].Description, oCategory.Items[iQuestID - 1], iScore, false);
+                    frmBetQuestion oBetQuestionForm = new frmBetQuestion(oCategories[char.ConvertToUtf32(sQuestion, 0) - 65].Description, oCategory[iQuestID - 1], iScore, false);
                     oBetQuestionForm.ShowDialog();
 
                     iCost = oBetQuestionForm.Bet;
                 }
                 else
                 {
-                    iCost = oCategory.Items[iQuestID - 1].Cost;
+                    iCost = oCategory[iQuestID - 1].Cost;
                 }
 
 
-                frmQuestion oQuestionForm = new frmQuestion(oCategory.Items[iQuestID - 1], false);
+                frmQuestion oQuestionForm = new frmQuestion(oCategory[iQuestID - 1], false);
                 oQuestionForm.ShowDialog();
 
                 // manage score
                 if (oQuestionForm.AnswerState == 0)
                 {
                     // didnt answer
-                    string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
+                    string sAnswerDescription = oCategory[iQuestID - 1][oCategory[iQuestID - 1].CorrectAnswerID].Description;
                     lblLastQuestion.Text = string.Format("Passed, answer was: {0}", sAnswerDescription);
                 }
                 else if (oQuestionForm.AnswerState == 1)
                 {
                     // answer good
                     iScore += iCost;
-                    string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
+                    string sAnswerDescription = oCategory[iQuestID - 1][oCategory[iQuestID - 1].CorrectAnswerID].Description;
                     lblLastQuestion.Text = string.Format("{0} is Correct!", sAnswerDescription);
                 }
                 else
                 {
                     // bad answer
                     iScore -= iCost;
-                    string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
+                    string sAnswerDescription = oCategory[iQuestID - 1][oCategory[iQuestID - 1].CorrectAnswerID].Description;
                     lblLastQuestion.Text = string.Format("Incorrect, answer was: {0}", sAnswerDescription);
                 }
                 lblScore.Text = string.Format("Score: {0}", iScore);
@@ -177,33 +177,33 @@ namespace Jeopardy.UI
                     oCategory.FillFinal();
                     oCategory.FillCategory();
 
-                    frmBetQuestion oFinalQuestionForm = new frmBetQuestion(oCategory.Description, oCategory.Items[0], iScore, true);
+                    frmBetQuestion oFinalQuestionForm = new frmBetQuestion(oCategory.Description, oCategory[0], iScore, true);
                     oFinalQuestionForm.ShowDialog();
 
                     iCost = oFinalQuestionForm.Bet;
 
-                    oQuestionForm = new frmQuestion(oCategory.Items[0], true);
+                    oQuestionForm = new frmQuestion(oCategory[0], true);
                     oQuestionForm.ShowDialog();
 
                     // manage score
                     if (oQuestionForm.AnswerState == 0)
                     {
                         // didnt answer
-                        string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
+                        string sAnswerDescription = oCategory[iQuestID - 1][oCategory[iQuestID - 1].CorrectAnswerID].Description;
                         lblLastQuestion.Text = string.Format("Passed, answer was: {0}", sAnswerDescription);
                     }
                     else if (oQuestionForm.AnswerState == 1)
                     {
                         // answer good
                         iScore += iCost;
-                        string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
+                        string sAnswerDescription = oCategory[iQuestID - 1][oCategory[iQuestID - 1].CorrectAnswerID].Description;
                         lblLastQuestion.Text = string.Format("{0} is Correct!", sAnswerDescription);
                     }
                     else
                     {
                         // bad answer
                         iScore -= iCost;
-                        string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
+                        string sAnswerDescription = oCategory[iQuestID - 1][oCategory[iQuestID - 1].CorrectAnswerID].Description;
                         lblLastQuestion.Text = string.Format("Incorrect, answer was: {0}", sAnswerDescription);
                     }
 
@@ -223,18 +223,15 @@ namespace Jeopardy.UI
             oCategories.FillCategories();
 
             // set up labels
-            lblA.Text = oCategories.Items[0].Description;
-            lblB.Text = oCategories.Items[1].Description;
-            lblC.Text = oCategories.Items[2].Description;
-            lblD.Text = oCategories.Items[3].Description;
-            lblE.Text = oCategories.Items[4].Description;
-            lblF.Text = oCategories.Items[5].Description;
+            lblA.Text = oCategories[0].Description;
+            lblB.Text = oCategories[1].Description;
+            lblC.Text = oCategories[2].Description;
+            lblD.Text = oCategories[3].Description;
+            lblE.Text = oCategories[4].Description;
+            lblF.Text = oCategories[5].Description;
 
             // load questions
-            foreach (cCategory oCat in oCategories.Items)
-            {
-                oCat.FillCategory();
-            }
+            oCategories.LoadQuestions();
 
         }
 
