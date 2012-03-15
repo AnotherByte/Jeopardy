@@ -1,14 +1,5 @@
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\bin\Debug\Jeopardy.DL.dll
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\bin\Debug\Jeopardy.DL.pdb
-C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\bin\Debug\DbLinq.dll
-C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\bin\Debug\DbLinq.Sqlite.dll
-C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\bin\Debug\System.Data.SQLite.dll
-C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\bin\Debug\System.Data.SQLite.Linq.dll
-C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\bin\Debug\DbLinq.Sqlite.pdb
-C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\bin\Debug\System.Data.SQLite.pdb
-C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\bin\Debug\System.Data.SQLite.xml
-C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\bin\Debug\System.Data.SQLite.Linq.pdb
-C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\bin\Debug\System.Data.SQLite.Linq.xml
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\obj\Debug\Jeopardy.DL.dll
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.DL\obj\Debug\Jeopardy.DL.pdb

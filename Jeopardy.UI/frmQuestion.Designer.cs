@@ -35,13 +35,14 @@
             this.btn4 = new System.Windows.Forms.Button();
             this.lblDescription = new System.Windows.Forms.Label();
             this.tmrClock = new System.Windows.Forms.Timer(this.components);
+            this.btnPass = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn1
             // 
             this.btn1.BackColor = System.Drawing.SystemColors.Control;
             this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn1.Location = new System.Drawing.Point(80, 255);
+            this.btn1.Location = new System.Drawing.Point(60, 254);
             this.btn1.Margin = new System.Windows.Forms.Padding(6);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(145, 70);
@@ -55,7 +56,7 @@
             // 
             this.btn2.BackColor = System.Drawing.SystemColors.Control;
             this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2.Location = new System.Drawing.Point(258, 255);
+            this.btn2.Location = new System.Drawing.Point(238, 254);
             this.btn2.Margin = new System.Windows.Forms.Padding(6);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(145, 70);
@@ -69,7 +70,7 @@
             // 
             this.btn3.BackColor = System.Drawing.SystemColors.Control;
             this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3.Location = new System.Drawing.Point(80, 356);
+            this.btn3.Location = new System.Drawing.Point(60, 355);
             this.btn3.Margin = new System.Windows.Forms.Padding(6);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(145, 70);
@@ -83,7 +84,7 @@
             // 
             this.btn4.BackColor = System.Drawing.SystemColors.Control;
             this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn4.Location = new System.Drawing.Point(258, 356);
+            this.btn4.Location = new System.Drawing.Point(238, 355);
             this.btn4.Margin = new System.Windows.Forms.Padding(6);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(145, 70);
@@ -97,7 +98,7 @@
             // 
             this.lblDescription.BackColor = System.Drawing.Color.SlateGray;
             this.lblDescription.ForeColor = System.Drawing.Color.Snow;
-            this.lblDescription.Location = new System.Drawing.Point(80, 25);
+            this.lblDescription.Location = new System.Drawing.Point(60, 24);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(323, 192);
             this.lblDescription.TabIndex = 4;
@@ -109,13 +110,28 @@
             this.tmrClock.Interval = 8000;
             this.tmrClock.Tick += new System.EventHandler(this.tmrClock_Tick);
             // 
+            // btnPass
+            // 
+            this.btnPass.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPass.Location = new System.Drawing.Point(306, 437);
+            this.btnPass.Margin = new System.Windows.Forms.Padding(6);
+            this.btnPass.Name = "btnPass";
+            this.btnPass.Size = new System.Drawing.Size(77, 37);
+            this.btnPass.TabIndex = 5;
+            this.btnPass.TabStop = false;
+            this.btnPass.Text = "Pass";
+            this.btnPass.UseVisualStyleBackColor = false;
+            this.btnPass.Click += new System.EventHandler(this.Button_Clicked);
+            // 
             // frmQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(482, 451);
+            this.ClientSize = new System.Drawing.Size(442, 487);
             this.ControlBox = false;
+            this.Controls.Add(this.btnPass);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.btn3);
             this.Controls.Add(this.btn4);
@@ -142,5 +158,6 @@
         private System.Windows.Forms.Button btn4;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Timer tmrClock;
+        private System.Windows.Forms.Button btnPass;
     }
 }

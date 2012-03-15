@@ -141,18 +141,26 @@ namespace Jeopardy.UI
                 }
 
 
-                frmQuestion oQuestionForm = new frmQuestion(oCategory.Items[iQuestID - 1]);
+                frmQuestion oQuestionForm = new frmQuestion(oCategory.Items[iQuestID - 1], false);
                 oQuestionForm.ShowDialog();
 
                 // manage score
-                if (oQuestionForm.AnsweredCorrect)
+                if (oQuestionForm.AnswerState == 0)
                 {
+                    // didnt answer
+                    string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
+                    lblLastQuestion.Text = string.Format("Passed, answer was: {0}", sAnswerDescription);
+                }
+                else if (oQuestionForm.AnswerState == 1)
+                {
+                    // answer good
                     iScore += iCost;
                     string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
                     lblLastQuestion.Text = string.Format("{0} is Correct!", sAnswerDescription);
                 }
                 else
                 {
+                    // bad answer
                     iScore -= iCost;
                     string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
                     lblLastQuestion.Text = string.Format("Incorrect, answer was: {0}", sAnswerDescription);
@@ -174,20 +182,28 @@ namespace Jeopardy.UI
 
                     iCost = oFinalQuestionForm.Bet;
 
-                    oQuestionForm = new frmQuestion(oCategory.Items[0]);
+                    oQuestionForm = new frmQuestion(oCategory.Items[0], true);
                     oQuestionForm.ShowDialog();
 
                     // manage score
-                    if (oQuestionForm.AnsweredCorrect)
+                    if (oQuestionForm.AnswerState == 0)
                     {
+                        // didnt answer
+                        string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
+                        lblLastQuestion.Text = string.Format("Passed, answer was: {0}", sAnswerDescription);
+                    }
+                    else if (oQuestionForm.AnswerState == 1)
+                    {
+                        // answer good
                         iScore += iCost;
-                        string sAnswerDescription = oCategory.Items[0].Items[oCategory.Items[0].CorrectAnswerID].Description;
+                        string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
                         lblLastQuestion.Text = string.Format("{0} is Correct!", sAnswerDescription);
                     }
                     else
                     {
+                        // bad answer
                         iScore -= iCost;
-                        string sAnswerDescription = oCategory.Items[0].Items[oCategory.Items[0].CorrectAnswerID].Description;
+                        string sAnswerDescription = oCategory.Items[iQuestID - 1].Items[oCategory.Items[iQuestID - 1].CorrectAnswerID].Description;
                         lblLastQuestion.Text = string.Format("Incorrect, answer was: {0}", sAnswerDescription);
                     }
 

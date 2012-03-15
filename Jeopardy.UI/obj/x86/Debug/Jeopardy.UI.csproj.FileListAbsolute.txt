@@ -5,8 +5,6 @@ C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\bin\Debug\Jeopar
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\bin\Debug\System.Data.SQLite.dll
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\bin\Debug\Jeopardy.BL.pdb
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\bin\Debug\Jeopardy.DL.pdb
-C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\bin\Debug\System.Data.SQLite.pdb
-C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\bin\Debug\System.Data.SQLite.xml
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\obj\x86\Debug\Jeopardy.UI.frmJeopardyBoard.resources
 C:\Users\Magnum\Documents\Programming - C#\Jeopardy\Jeopardy.UI\obj\x86\Debug\Jeopardy.UI.frmJeopardyLogin.resources

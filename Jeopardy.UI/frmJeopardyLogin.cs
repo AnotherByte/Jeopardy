@@ -44,6 +44,7 @@ namespace Jeopardy.UI
         private void btnInputForm_Click(object sender, EventArgs e)
         {
             frmInput oInputForm = new frmInput();
+            this.Hide();
             oInputForm.ShowDialog();
             this.Close();
         }
