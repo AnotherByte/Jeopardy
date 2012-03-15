@@ -130,7 +130,7 @@ namespace Jeopardy.DL
         }
 
         // get array of unused categories
-        static public List<int> UnusedCategoryList()
+        static public List<int> UnusedCategoryList(string sIDs)
         {
             // check if enough unused
             if (GetUnusedCategory(0) < 6)
@@ -139,7 +139,7 @@ namespace Jeopardy.DL
                 ResetCategories(0);
             }
 
-            DataTable dtUnusedID = ExecuteQuery("select category_id from tbl_category where (category_used = 0 AND category_is_final = 0)");
+            DataTable dtUnusedID = ExecuteQuery(string.Format("select category_id from tbl_category where (category_used = 0 AND category_is_final = 0 AND category_id Not in ({0}))", sIDs));
             List<int> unused = new List<int>();
 
             // fill list with cat_id's

@@ -41,13 +41,14 @@
             // btn1
             // 
             this.btn1.BackColor = System.Drawing.SystemColors.Control;
-            this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn1.Location = new System.Drawing.Point(60, 254);
+            this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1.Location = new System.Drawing.Point(52, 236);
             this.btn1.Margin = new System.Windows.Forms.Padding(6);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(145, 70);
+            this.btn1.Size = new System.Drawing.Size(160, 82);
             this.btn1.TabIndex = 0;
             this.btn1.TabStop = false;
+            this.btn1.Tag = "0";
             this.btn1.Text = "button1";
             this.btn1.UseVisualStyleBackColor = false;
             this.btn1.Click += new System.EventHandler(this.Button_Clicked);
@@ -55,13 +56,14 @@
             // btn2
             // 
             this.btn2.BackColor = System.Drawing.SystemColors.Control;
-            this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2.Location = new System.Drawing.Point(238, 254);
+            this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2.Location = new System.Drawing.Point(230, 236);
             this.btn2.Margin = new System.Windows.Forms.Padding(6);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(145, 70);
+            this.btn2.Size = new System.Drawing.Size(160, 82);
             this.btn2.TabIndex = 1;
             this.btn2.TabStop = false;
+            this.btn2.Tag = "1";
             this.btn2.Text = "button2";
             this.btn2.UseVisualStyleBackColor = false;
             this.btn2.Click += new System.EventHandler(this.Button_Clicked);
@@ -69,13 +71,14 @@
             // btn3
             // 
             this.btn3.BackColor = System.Drawing.SystemColors.Control;
-            this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3.Location = new System.Drawing.Point(60, 355);
+            this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3.Location = new System.Drawing.Point(52, 337);
             this.btn3.Margin = new System.Windows.Forms.Padding(6);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(145, 70);
+            this.btn3.Size = new System.Drawing.Size(160, 82);
             this.btn3.TabIndex = 3;
             this.btn3.TabStop = false;
+            this.btn3.Tag = "2";
             this.btn3.Text = "button3";
             this.btn3.UseVisualStyleBackColor = false;
             this.btn3.Click += new System.EventHandler(this.Button_Clicked);
@@ -83,13 +86,14 @@
             // btn4
             // 
             this.btn4.BackColor = System.Drawing.SystemColors.Control;
-            this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn4.Location = new System.Drawing.Point(238, 355);
+            this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn4.Location = new System.Drawing.Point(230, 337);
             this.btn4.Margin = new System.Windows.Forms.Padding(6);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(145, 70);
+            this.btn4.Size = new System.Drawing.Size(160, 82);
             this.btn4.TabIndex = 2;
             this.btn4.TabStop = false;
+            this.btn4.Tag = "3";
             this.btn4.Text = "button4";
             this.btn4.UseVisualStyleBackColor = false;
             this.btn4.Click += new System.EventHandler(this.Button_Clicked);
@@ -98,9 +102,9 @@
             // 
             this.lblDescription.BackColor = System.Drawing.Color.SlateGray;
             this.lblDescription.ForeColor = System.Drawing.Color.Snow;
-            this.lblDescription.Location = new System.Drawing.Point(60, 24);
+            this.lblDescription.Location = new System.Drawing.Point(52, 18);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(323, 192);
+            this.lblDescription.Size = new System.Drawing.Size(338, 192);
             this.lblDescription.TabIndex = 4;
             this.lblDescription.Text = "label1";
             this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -113,13 +117,14 @@
             // btnPass
             // 
             this.btnPass.BackColor = System.Drawing.SystemColors.Control;
-            this.btnPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPass.Location = new System.Drawing.Point(306, 437);
+            this.btnPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPass.Location = new System.Drawing.Point(313, 431);
             this.btnPass.Margin = new System.Windows.Forms.Padding(6);
             this.btnPass.Name = "btnPass";
             this.btnPass.Size = new System.Drawing.Size(77, 37);
             this.btnPass.TabIndex = 5;
             this.btnPass.TabStop = false;
+            this.btnPass.Tag = "-1";
             this.btnPass.Text = "Pass";
             this.btnPass.UseVisualStyleBackColor = false;
             this.btnPass.Click += new System.EventHandler(this.Button_Clicked);

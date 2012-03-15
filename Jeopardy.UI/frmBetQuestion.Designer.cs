@@ -68,14 +68,14 @@
             // 
             // lblBetText
             // 
-            this.lblBetText.AutoSize = true;
             this.lblBetText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBetText.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblBetText.Location = new System.Drawing.Point(14, 212);
+            this.lblBetText.Location = new System.Drawing.Point(14, 183);
             this.lblBetText.Name = "lblBetText";
-            this.lblBetText.Size = new System.Drawing.Size(231, 20);
+            this.lblBetText.Size = new System.Drawing.Size(348, 54);
             this.lblBetText.TabIndex = 3;
             this.lblBetText.Text = "Bet up to your current winnings:";
+            this.lblBetText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnAcceptBet
             // 

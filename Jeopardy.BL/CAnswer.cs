@@ -15,14 +15,12 @@ namespace Jeopardy.BL
         public string Description
         {
             get { return sDescription; }
-            set { sDescription = value; }
         }
 
         private bool bIsCorrect;
         public bool IsCorrect
         {
             get { return bIsCorrect; }
-            set { bIsCorrect = value; }
         }
 
         #endregion

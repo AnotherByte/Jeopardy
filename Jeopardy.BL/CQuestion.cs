@@ -16,28 +16,24 @@ namespace Jeopardy.BL
         public int ID
         {
             get { return iID; }
-            set { iID = value; }
         }
 
         private string sDescription;
         public string Description
         {
             get { return sDescription; }
-            set { sDescription = value; }
         }
 
         private int iCost;
         public int Cost
         {
             get { return iCost; }
-            set { iCost = value; }
         }
 
-        private int iCorrectAnswerID;
-        public int CorrectAnswerID
+        private int iCorrectAnswerIndex;
+        public int CorrectAnswerIndex
         {
-            get { return iCorrectAnswerID; }
-            set { iCorrectAnswerID = value; }
+            get { return iCorrectAnswerIndex; }
         }
 
 
@@ -91,7 +87,7 @@ namespace Jeopardy.BL
                 // check if correct answer
                 if (oAnswer.IsCorrect)
                 {
-                    this.CorrectAnswerID = this.mcol.Count - 1;
+                    iCorrectAnswerIndex = this.mcol.Count - 1;
                 }
             }
         }

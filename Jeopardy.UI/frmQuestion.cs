@@ -12,22 +12,23 @@ namespace Jeopardy.UI
 {
     public partial class frmQuestion : Form
     {
-        private cQuestion oCurrentQuestion;
+        private cQuestion oQuestion;
 
-        private int iAnswerState;
-        public int AnswerState
+        private int iAnswerIndex;
+        public int AnswerIndex
         {
-            get { return iAnswerState; }
+            get { return iAnswerIndex; }
            // set { AnsweredCorrect = value; }
         }
         private Button[] arButtons;
 
-        public frmQuestion(cQuestion oQuest, bool bFinal)
+        public frmQuestion(cQuestion oQuest, int viCost, bool bFinal)
         {
             InitializeComponent();
 
-            oCurrentQuestion = oQuest;
-            btnPass.Visible = bFinal;
+            this.Text = string.Format("${0} Question", viCost);
+            oQuestion = oQuest;
+            btnPass.Visible = !bFinal;
 
             arButtons = new Button[4];
             arButtons[0] = btn1;
@@ -38,13 +39,18 @@ namespace Jeopardy.UI
 
         private void frmQuestion_Load(object sender, EventArgs e)
         {
-            oCurrentQuestion.FillQuestion();
-            this.Text = string.Format("${0} Question", oCurrentQuestion.Cost);
-            lblDescription.Text = oCurrentQuestion.Description;
+            oQuestion.FillQuestion();
+            lblDescription.Text = oQuestion.Description;
 
             for (int x = 0; x < 4; x++ )
             {
-                arButtons[x].Text = oCurrentQuestion[x].Description;
+                arButtons[x].Text = oQuestion[x].Description;
+                if (oQuestion[x].Description.Length > 30)
+                {
+                    Font oFont = new Font(System.Drawing.FontFamily.GenericSansSerif, 10);
+
+                    arButtons[x].Font = oFont;
+                }
             }
 
             tmrClock.Start();
@@ -62,18 +68,7 @@ namespace Jeopardy.UI
             {
                 Button btnAnswer = (Button)sender;
 
-                if (btnAnswer.Name.Remove(0, 3) == "Pass")
-                {
-                    iAnswerState = 0;
-                }
-                else if (btnAnswer.Name.Remove(0, 3) == oCurrentQuestion.CorrectAnswerID.ToString())
-                {
-                    iAnswerState = 1;
-                }
-                else
-                {
-                    iAnswerState = -1;
-                }
+                int.TryParse(btnAnswer.Tag.ToString(), out iAnswerIndex);
             }
             this.Close();
         }

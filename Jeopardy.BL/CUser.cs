@@ -15,21 +15,18 @@ namespace Jeopardy.BL
         public int ID
         {
             get { return iID; }
-            set { iID = value; }
         }
 
         private string sDescription;
         public string Description
         {
             get { return sDescription; }
-            set { sDescription = value; }
         }
 
         private int iHighScore;
         public int HighScore
         {
             get { return iHighScore; }
-            set { iHighScore = value; }
         }
 
         #endregion

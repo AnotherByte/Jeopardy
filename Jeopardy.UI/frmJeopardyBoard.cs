@@ -13,22 +13,16 @@ namespace Jeopardy.UI
     public partial class frmJeopardyBoard : Form
     {
         private Button[,] arButtons;
-        private cUser oCurrentUser;
-        private string sDailyDouble;
-        cCategories oCategories;
-        cCategory oCategory;
-
-        private int iScore = 0;
+        private cGame oGame;
 
 
         public frmJeopardyBoard(cUser oUser)
         {
             InitializeComponent();
-
-            oCurrentUser = oUser;
-            Random rand = new Random();
-            sDailyDouble = char.ConvertFromUtf32(rand.Next(65, 70)) + rand.Next(1,6).ToString();
             
+            oGame = new cGame(oUser, 2);        // <--- NUMBER OF ROUNDS
+            oGame.NewRound();
+
             #region button array
 
             // create array for buttons
@@ -71,23 +65,38 @@ namespace Jeopardy.UI
             arButtons[5, 3] = btnF4;
             arButtons[5, 4] = btnF5;
 
+            #endregion
+
+            // bring in user name
+            this.Text = string.Format("Jeopardy - {0}", oGame.UserName);
+            lblLastQuestion.Text = string.Empty;
+
+            // set up labels
+            lblA.Text = oGame.GetCatDescription(0);
+            lblB.Text = oGame.GetCatDescription(1);
+            lblC.Text = oGame.GetCatDescription(2);
+            lblD.Text = oGame.GetCatDescription(3);
+            lblE.Text = oGame.GetCatDescription(4);
+            lblF.Text = oGame.GetCatDescription(5);
+
             // label buttons
-            for (int x = 0; x < 6; x++)
+            for (int x = 0; x < 6; x++)         // x is cat
             {
-                for (int y = 0; y < 5; y++)
+                for (int y = 0; y < 5; y++)     // y is ques
                 {
-                    arButtons[x,y].Text = string.Format("${0}", ((y+1)*200));
+                    string sIndex = string.Format("{0}{1}", x, y);
+                    if (oGame.IsQuestionDailyDouble(sIndex))
+                    {
+                        // label daily double
+                        arButtons[x, y].Text = sIndex;
+                    }
+                    else
+                    {
+                        arButtons[x, y].Text = string.Format("${0}", oGame.GetCost(sIndex));
+                    }
                 }
             }
 
-            #endregion
-
-            // display daily double
-            int iQuestNum, iCatNum;
-            iCatNum = char.ConvertToUtf32(sDailyDouble, 0) - 65;
-            int.TryParse(sDailyDouble[1].ToString(), out iQuestNum);
-            iQuestNum--;
-            arButtons[iCatNum, iQuestNum].Text = string.Format("{0}, {1}{2}", sDailyDouble, iCatNum, iQuestNum);
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -95,144 +104,61 @@ namespace Jeopardy.UI
             if (sender is Button)
             {
                 Button btnQuestion = (Button)sender;
-                string sQuestion = btnQuestion.Name;
-                sQuestion = sQuestion.Remove(0, 3);
-                //MessageBox.Show(sQuestion);
-
-                // get category of selected question
-                switch (sQuestion[0])
-                {
-                    case 'A':
-                        oCategory = oCategories[0];
-                        break;
-                    case 'B':
-                        oCategory = oCategories[1];
-                        break;
-                    case 'C':
-                        oCategory = oCategories[2];
-                        break;
-                    case 'D':
-                        oCategory = oCategories[3];
-                        break;
-                    case 'E':
-                        oCategory = oCategories[4];
-                        break;
-                    case 'F':
-                        oCategory = oCategories[5];
-                        break;
-                }
-                int iQuestID;
-                int.TryParse(sQuestion.Remove(0, 1), out iQuestID);
-
+                string sIndex = btnQuestion.Tag.ToString();
                 int iCost;
 
                 // check for daily double
-                if (sQuestion == sDailyDouble)
+                if (oGame.IsQuestionDailyDouble(sIndex))
                 {
                     // is daily double
-                    frmBetQuestion oBetQuestionForm = new frmBetQuestion(oCategories[char.ConvertToUtf32(sQuestion, 0) - 65].Description, oCategory[iQuestID - 1], iScore, false);
+                    frmBetQuestion oBetQuestionForm = new frmBetQuestion(oGame.GetCatDescription(sIndex[0]), oGame.GetQuestion(sIndex), oGame.Score, false);
                     oBetQuestionForm.ShowDialog();
 
                     iCost = oBetQuestionForm.Bet;
                 }
                 else
                 {
-                    iCost = oCategory[iQuestID - 1].Cost;
+                    iCost = oGame.GetCost(sIndex);
                 }
 
-
-                frmQuestion oQuestionForm = new frmQuestion(oCategory[iQuestID - 1], false);
+                frmQuestion oQuestionForm = new frmQuestion(oGame.GetQuestion(sIndex), iCost, false);
                 oQuestionForm.ShowDialog();
 
                 // manage score
-                if (oQuestionForm.AnswerState == 0)
-                {
-                    // didnt answer
-                    string sAnswerDescription = oCategory[iQuestID - 1][oCategory[iQuestID - 1].CorrectAnswerID].Description;
-                    lblLastQuestion.Text = string.Format("Passed, answer was: {0}", sAnswerDescription);
-                }
-                else if (oQuestionForm.AnswerState == 1)
-                {
-                    // answer good
-                    iScore += iCost;
-                    string sAnswerDescription = oCategory[iQuestID - 1][oCategory[iQuestID - 1].CorrectAnswerID].Description;
-                    lblLastQuestion.Text = string.Format("{0} is Correct!", sAnswerDescription);
-                }
-                else
-                {
-                    // bad answer
-                    iScore -= iCost;
-                    string sAnswerDescription = oCategory[iQuestID - 1][oCategory[iQuestID - 1].CorrectAnswerID].Description;
-                    lblLastQuestion.Text = string.Format("Incorrect, answer was: {0}", sAnswerDescription);
-                }
-                lblScore.Text = string.Format("Score: {0}", iScore);
+                lblLastQuestion.Text = oGame.GetAnswerState(sIndex, oQuestionForm.AnswerIndex, iCost);
+                lblScore.Text = string.Format("Score: {0}", oGame.Score);
 
                 btnQuestion.Enabled = false;
 
+
+
+
                 if (CheckForEnd())
                 {
-                    // all questions used, final jeopardy
-
-                    oCategory = new cCategory();
-                    oCategory.FillFinal();
-                    oCategory.FillCategory();
-
-                    frmBetQuestion oFinalQuestionForm = new frmBetQuestion(oCategory.Description, oCategory[0], iScore, true);
-                    oFinalQuestionForm.ShowDialog();
-
-                    iCost = oFinalQuestionForm.Bet;
-
-                    oQuestionForm = new frmQuestion(oCategory[0], true);
-                    oQuestionForm.ShowDialog();
-
-                    // manage score
-                    if (oQuestionForm.AnswerState == 0)
+                    if (oGame.EndGame())
                     {
-                        // didnt answer
-                        string sAnswerDescription = oCategory[iQuestID - 1][oCategory[iQuestID - 1].CorrectAnswerID].Description;
-                        lblLastQuestion.Text = string.Format("Passed, answer was: {0}", sAnswerDescription);
-                    }
-                    else if (oQuestionForm.AnswerState == 1)
-                    {
-                        // answer good
-                        iScore += iCost;
-                        string sAnswerDescription = oCategory[iQuestID - 1][oCategory[iQuestID - 1].CorrectAnswerID].Description;
-                        lblLastQuestion.Text = string.Format("{0} is Correct!", sAnswerDescription);
+                        // final jeopardy
+                        cCategory oCategory = oGame.FinalJeopardy();
+
+                        frmBetQuestion oFinalQuestionForm = new frmBetQuestion(oCategory.Description, oCategory[0], oGame.Score, true);
+                        oFinalQuestionForm.ShowDialog();
+
+                        iCost = oFinalQuestionForm.Bet;
+
+                        oQuestionForm = new frmQuestion(oCategory[0], iCost, true);
+                        oQuestionForm.ShowDialog();
+
+                        // manage score
+                        lblLastQuestion.Text = oGame.GetAnswerState(sIndex, oQuestionForm.AnswerIndex, iCost);
+                        lblScore.Text = string.Format("Score: {0}", oGame.Score);
                     }
                     else
                     {
-                        // bad answer
-                        iScore -= iCost;
-                        string sAnswerDescription = oCategory[iQuestID - 1][oCategory[iQuestID - 1].CorrectAnswerID].Description;
-                        lblLastQuestion.Text = string.Format("Incorrect, answer was: {0}", sAnswerDescription);
+                        // new round
+                        oGame.NewRound();
                     }
-
-                    lblScore.Text = string.Format("Score: {0}", iScore);
                 }
             }
-        }
-
-        private void frmJeopardyBoard_Load(object sender, EventArgs e)
-        {
-            // bring in user name
-            this.Text = string.Format("Jeopardy - {0}", oCurrentUser.Description.ToString());
-            lblLastQuestion.Text = string.Empty;
-
-            // load up categories
-            oCategories = new cCategories();
-            oCategories.FillCategories();
-
-            // set up labels
-            lblA.Text = oCategories[0].Description;
-            lblB.Text = oCategories[1].Description;
-            lblC.Text = oCategories[2].Description;
-            lblD.Text = oCategories[3].Description;
-            lblE.Text = oCategories[4].Description;
-            lblF.Text = oCategories[5].Description;
-
-            // load questions
-            oCategories.LoadQuestions();
-
         }
 
         private bool CheckForEnd()  // true if game over

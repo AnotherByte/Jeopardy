@@ -49,9 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CAnswer.cs" />
-    <Compile Include="CCategories.cs" />
     <Compile Include="CCategory.cs" />
+    <Compile Include="CGame.cs" />
     <Compile Include="CQuestion.cs" />
+    <Compile Include="CRound.cs" />
     <Compile Include="CUser.cs" />
     <Compile Include="CUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -30,17 +30,22 @@ namespace Jeopardy.UI
         private cQuestion oQuestion;
 
 
-        public frmBetQuestion(string vsDescription, cQuestion voQuestion, int viScore, bool vbIsFinal)
+        public frmBetQuestion(string vsCatDescription, cQuestion voQuestion, int viScore, bool vbIsFinal)
         {
             InitializeComponent();
 
-            lblCategoryText.Text = vsDescription;
+            lblCategoryText.Text = vsCatDescription;
 
             bFinal = vbIsFinal;
             oQuestion = voQuestion;
 
             iUserScore = viScore;
             lblStartScore.Text = string.Format( "Current Score: {0}", iUserScore);
+
+            if (iUserScore <= 0)
+            {
+                lblBetText.Text = "You don't have any money.\nYou can bet $1000 or $0.";
+            }
 
             if (bFinal)
             {
@@ -54,16 +59,29 @@ namespace Jeopardy.UI
 
         private void btnAcceptBet_Click(object sender, EventArgs e)
         {
-            int.TryParse(txtBet.Text, out iBet);
-
-            if (iBet <= iUserScore || iBet == 1000)
+            if (iUserScore > 0 && int.TryParse(txtBet.Text, out iBet) && iBet <= iUserScore && iBet >= 0)
             {
+                // has money
+                // valid input
                 Close();
+            }
+            else if (iUserScore <= 0 && int.TryParse(txtBet.Text, out iBet) && ( iBet == 1000 || iBet == 0 ))
+            {
+                // no money
+                // valid input
+                Close();
+            }
+            else if (iUserScore > 0)
+            {
+                // invaild input
+                lblBetText.ForeColor = Color.Red;
+                lblBetText.Text = string.Format("Must bet ${0} or less (bet must be positive).", iUserScore);
             }
             else
             {
+                // invaild input
                 lblBetText.ForeColor = Color.Red;
-                lblBetText.Text = string.Format("Must bet ${0}, less than ${0}, or $1000", iUserScore);
+                lblBetText.Text = string.Format("Must bet $1000 or $0.");
             }
         }
     }

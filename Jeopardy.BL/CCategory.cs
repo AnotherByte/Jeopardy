@@ -16,28 +16,18 @@ namespace Jeopardy.BL
         public int ID
         {
             get { return iID; }
-            set { iID = value; }
         }
-
-        //private bool bIsFinal;
-        //public bool IsFinal
-        //{
-        //    get { return bIsFinal; }
-        //    set { bIsFinal = value; }
-        //}
 
         private string sDescription;
         public string Description
         {
             get { return sDescription; }
-            set { sDescription = value; }
         }
 
         private List<cQuestion> mcol;
         public cQuestion this[int index]
         {
             get { return mcol[index]; }
-            //set { mcol = value; }
         }
 
         #endregion
@@ -73,6 +63,7 @@ namespace Jeopardy.BL
         public void FillFinal()
         {
             this.Load(DBAccess.GetFinalCategory().Rows[0]);
+            this.FillCategory();
         }
 
         // gets datatable from DB and fills collection
