@@ -15,6 +15,8 @@ namespace Jeopardy.UI
         private Button[,] arButtons;
         private cGame oGame;
 
+        public bool GameState;
+
 
         public frmJeopardyBoard(cUser oUser)
         {
@@ -145,18 +147,25 @@ namespace Jeopardy.UI
                 // manage score
                 lblLastQuestion.Text = oGame.GetFinalAnswerState(oQuestionForm.AnswerIndex, iCost);
                 lblScore.Text = string.Format("Score: {0}", oGame.Score);
+
+                oGame.Save();
+
+                DialogResult dlgrslt = MessageBox.Show(string.Format("Final Score: {0} \n Play again (y/n)", oGame.Score), string.Format("{0} - Game Over", oGame.UserName), MessageBoxButtons.YesNo);
+
+                GameState = (dlgrslt == System.Windows.Forms.DialogResult.Yes);
+                this.Close();
             }
             else
             {
                 // new round
+
+                oGame.NewRound();
                 NewRound();
             }
         }
 
         private void NewRound()
         {
-            oGame.NewRound();
-
             // set up labels
             lblA.Text = oGame.GetCatDescription(0);
             lblB.Text = oGame.GetCatDescription(1);
@@ -171,15 +180,17 @@ namespace Jeopardy.UI
                 for (int y = 0; y < 5; y++)     // y is ques
                 {
                     string sIndex = string.Format("{0}{1}", x, y);
+
+                    arButtons[x, y].Text = string.Format("${0}", oGame.GetCost(sIndex));
+
                     if (oGame.IsQuestionDailyDouble(sIndex))
                     {
                         // label daily double
-                        arButtons[x, y].Text = sIndex;
+                        //arButtons[x, y].Text = sIndex;
                     }
-                    else
-                    {
-                        arButtons[x, y].Text = string.Format("${0}", oGame.GetCost(sIndex));
-                    }
+
+                    // reset button
+                    arButtons[x, y].Enabled = true;
                 }
             }
         }

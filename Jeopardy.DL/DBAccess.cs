@@ -126,7 +126,7 @@ namespace Jeopardy.DL
         // reset used categories
         static private int ResetCategories(int viFinal)
         {
-            return ExecuteNonQuery(string.Format("update tbl_category set category_used = 0 and category_is_final = {0}", viFinal));
+            return ExecuteNonQuery(string.Format("update tbl_category set category_used = 0 where category_is_final = {0}", viFinal));
         }
 
         // get array of unused categories
@@ -157,6 +157,38 @@ namespace Jeopardy.DL
         static public bool SQLInsert(string sql)
         {
             return (ExecuteNonQuery(sql) == 1);
+        }
+
+        // add game to database and return game id
+        static public int SaveGame(int viUserID)
+        {
+            string sql = string.Format("insert into tbl_game (user_id) values ({0})", viUserID);
+            ExecuteNonQuery(sql);
+
+            DataTable dt = ExecuteQuery(string.Format("select game_id from tbl_game where user_id = {0} order by game_id desc", viUserID));
+
+
+            return int.Parse(dt.Rows[0][0].ToString());
+        }
+
+        // add round to database
+        static public void SaveRound(int GameID, int Score)
+        {
+            string sql = string.Format("insert into tbl_round (game_id, round_score) values ({0}, {1})", GameID, Score);
+            ExecuteNonQuery(sql);
+        }
+
+        // get highscore based on ID
+        static public int GetHighScore(int UserID)
+        {
+            DataTable dt = ExecuteQuery(string.Format("select user_high_score from tbl_user where user_id = {0}", UserID));
+
+            return int.Parse(dt.Rows[0][0].ToString());
+        }
+
+        public static void SetHighScore(int Score, int UserID)
+        {
+            ExecuteNonQuery(string.Format("update tbl_user set user_high_score = {0} where user_id = {1}", Score, UserID));
         }
     }
 }

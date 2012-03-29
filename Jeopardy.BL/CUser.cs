@@ -29,6 +29,11 @@ namespace Jeopardy.BL
             get { return iHighScore; }
         }
 
+        public string Display
+        {
+            get { return sDescription + "\t\t$" + iHighScore; }
+        }
+
         #endregion
 
         // get user info from dr

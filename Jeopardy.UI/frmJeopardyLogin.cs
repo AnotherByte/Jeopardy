@@ -25,7 +25,7 @@ namespace Jeopardy.UI
             foreach (cUser oUser in oUsers.Items)
             {
                 lstUsers.DataSource = oUsers.Items;
-                lstUsers.DisplayMember = "Description";
+                lstUsers.DisplayMember = "Display";
             }
         }
 
@@ -37,7 +37,15 @@ namespace Jeopardy.UI
                 frmJeopardyBoard oBoard = new frmJeopardyBoard(oUsers.Items[lstUsers.SelectedIndex]);
                 this.Hide();
                 oBoard.ShowDialog();
-                this.Close();
+
+                if (oBoard.GameState)
+                {
+                    btnLogin_Click(sender, e);
+                }
+                else
+                {
+                    this.Close();
+                }
             }
         }
 

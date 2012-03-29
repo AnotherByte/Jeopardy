@@ -111,5 +111,10 @@ namespace Jeopardy.BL
             return mcol[iCat][iQue].Cost * iMultiplier;
         }
 
+        public void Save(int GameID)
+        {
+            DBAccess.SaveRound(GameID, iScore);
+        }
+
     }
 }

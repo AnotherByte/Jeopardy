@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Jeopardy.DL;
 
 namespace Jeopardy.BL
 {
@@ -14,6 +15,8 @@ namespace Jeopardy.BL
         {
             get { return oUser.Description; }
         }
+
+        private int GameID;
 
 
         private cCategory oFinalCategory;
@@ -42,6 +45,7 @@ namespace Jeopardy.BL
             mcol = new List<cRound>();
             oUser = voUser;
             iNumberOfRounds = viNumberOfRounds;
+
         }
 
 
@@ -189,6 +193,22 @@ namespace Jeopardy.BL
             }
 
             return sAnswerState;
+        }
+
+        public void Save()
+        {
+            // add game in db
+            GameID = DBAccess.SaveGame(oUser.ID);
+
+            // add round in db
+            foreach (cRound oRound in mcol)
+            {
+                oRound.Save(GameID);
+            }
+
+            // add to score
+            iScore += DBAccess.GetHighScore(oUser.ID);
+            DBAccess.SetHighScore(iScore, oUser.ID);
         }
 
     }
