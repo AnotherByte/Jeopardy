@@ -80,6 +80,17 @@ namespace Jeopardy.Input
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            chkACorrect.Checked = false;
+            chkCFinal.Checked = false;
+            chkCUsed.Checked = false;
+
+            txtADescription.Text = "";
+            txtAQID.Text = "";
+            txtCDescription.Text = "";
+            txtQCID.Text = "";
+            txtQCost.Text = "";
+            txtQDescription.Text = "";
+
 
         }
     }

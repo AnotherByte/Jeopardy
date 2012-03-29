@@ -50,7 +50,7 @@ namespace Jeopardy.BL
             cRound oRound = new cRound(mcol.Count + 1, sUsedIDs);
             oRound.FillRound();
 
-            if (sUsedIDs == "")
+            if (sUsedIDs == null)
             {
                 sUsedIDs = oRound.UsedIDs;
             }
@@ -160,6 +160,35 @@ namespace Jeopardy.BL
             oFinalCategory.FillFinal();
 
             return oFinalCategory;
+        }
+        
+        public string GetFinalAnswerState(int iAnswerIndex, int viCost)
+        {
+            string sAnswerState;
+
+            if (iAnswerIndex == -1)
+            {
+                // didnt answer
+                string sAnswerDescription = oFinalCategory[0][oFinalCategory[0].CorrectAnswerIndex].Description;
+                sAnswerState = string.Format("Passed, answer was: {0}", sAnswerDescription);
+            }
+            else if (iAnswerIndex == oFinalCategory[0].CorrectAnswerIndex)
+            {
+                // answer good
+                ChangeScore(viCost);
+                string sAnswerDescription = oFinalCategory[0][oFinalCategory[0].CorrectAnswerIndex].Description;
+                sAnswerState = string.Format("{0} is Correct!", sAnswerDescription);
+            }
+            else
+            {
+                // bad answer
+                ChangeScore(-1 * viCost);
+                string sAnswerDescription1 = oFinalCategory[0][iAnswerIndex].Description;
+                string sAnswerDescription2 = oFinalCategory[0][oFinalCategory[0].CorrectAnswerIndex].Description;
+                sAnswerState = string.Format("{0} is incorrect, answer was: {1}", sAnswerDescription1, sAnswerDescription2);
+            }
+
+            return sAnswerState;
         }
 
     }

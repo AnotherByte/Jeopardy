@@ -71,32 +71,7 @@ namespace Jeopardy.UI
             this.Text = string.Format("Jeopardy - {0}", oGame.UserName);
             lblLastQuestion.Text = string.Empty;
 
-            // set up labels
-            lblA.Text = oGame.GetCatDescription(0);
-            lblB.Text = oGame.GetCatDescription(1);
-            lblC.Text = oGame.GetCatDescription(2);
-            lblD.Text = oGame.GetCatDescription(3);
-            lblE.Text = oGame.GetCatDescription(4);
-            lblF.Text = oGame.GetCatDescription(5);
-
-            // label buttons
-            for (int x = 0; x < 6; x++)         // x is cat
-            {
-                for (int y = 0; y < 5; y++)     // y is ques
-                {
-                    string sIndex = string.Format("{0}{1}", x, y);
-                    if (oGame.IsQuestionDailyDouble(sIndex))
-                    {
-                        // label daily double
-                        arButtons[x, y].Text = sIndex;
-                    }
-                    else
-                    {
-                        arButtons[x, y].Text = string.Format("${0}", oGame.GetCost(sIndex));
-                    }
-                }
-            }
-
+            NewRound();
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -129,35 +104,11 @@ namespace Jeopardy.UI
                 lblScore.Text = string.Format("Score: {0}", oGame.Score);
 
                 btnQuestion.Enabled = false;
+            }
 
-
-
-
-                if (CheckForEnd())
-                {
-                    if (oGame.EndGame())
-                    {
-                        // final jeopardy
-                        cCategory oCategory = oGame.FinalJeopardy();
-
-                        frmBetQuestion oFinalQuestionForm = new frmBetQuestion(oCategory.Description, oCategory[0], oGame.Score, true);
-                        oFinalQuestionForm.ShowDialog();
-
-                        iCost = oFinalQuestionForm.Bet;
-
-                        oQuestionForm = new frmQuestion(oCategory[0], iCost, true);
-                        oQuestionForm.ShowDialog();
-
-                        // manage score
-                        lblLastQuestion.Text = oGame.GetAnswerState(sIndex, oQuestionForm.AnswerIndex, iCost);
-                        lblScore.Text = string.Format("Score: {0}", oGame.Score);
-                    }
-                    else
-                    {
-                        // new round
-                        oGame.NewRound();
-                    }
-                }
+            if (CheckForEnd())
+            {
+                EndRound();
             }
         }
 
@@ -174,6 +125,68 @@ namespace Jeopardy.UI
                 }
             }
             return end;
+        }
+
+        private void EndRound()  // quick round end for demo
+        {
+            if (oGame.EndGame())
+            {
+                // final jeopardy
+                cCategory oCategory = oGame.FinalJeopardy();
+
+                frmBetQuestion oFinalQuestionForm = new frmBetQuestion(oCategory.Description, oCategory[0], oGame.Score, true);
+                oFinalQuestionForm.ShowDialog();
+
+                int iCost = oFinalQuestionForm.Bet;
+
+                frmQuestion oQuestionForm = new frmQuestion(oCategory[0], iCost, true);
+                oQuestionForm.ShowDialog();
+
+                // manage score
+                lblLastQuestion.Text = oGame.GetFinalAnswerState(oQuestionForm.AnswerIndex, iCost);
+                lblScore.Text = string.Format("Score: {0}", oGame.Score);
+            }
+            else
+            {
+                // new round
+                NewRound();
+            }
+        }
+
+        private void NewRound()
+        {
+            oGame.NewRound();
+
+            // set up labels
+            lblA.Text = oGame.GetCatDescription(0);
+            lblB.Text = oGame.GetCatDescription(1);
+            lblC.Text = oGame.GetCatDescription(2);
+            lblD.Text = oGame.GetCatDescription(3);
+            lblE.Text = oGame.GetCatDescription(4);
+            lblF.Text = oGame.GetCatDescription(5);
+
+            // label buttons
+            for (int x = 0; x < 6; x++)         // x is cat
+            {
+                for (int y = 0; y < 5; y++)     // y is ques
+                {
+                    string sIndex = string.Format("{0}{1}", x, y);
+                    if (oGame.IsQuestionDailyDouble(sIndex))
+                    {
+                        // label daily double
+                        arButtons[x, y].Text = sIndex;
+                    }
+                    else
+                    {
+                        arButtons[x, y].Text = string.Format("${0}", oGame.GetCost(sIndex));
+                    }
+                }
+            }
+        }
+
+        private void btnSkip_Click(object sender, EventArgs e)
+        {
+            EndRound();
         }
     }
 }

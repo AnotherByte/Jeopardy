@@ -66,6 +66,7 @@
             this.lblF = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.lblLastQuestion = new System.Windows.Forms.Label();
+            this.btnSkip = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnA1
@@ -642,12 +643,29 @@
             this.lblLastQuestion.Text = "Correct";
             this.lblLastQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnSkip
+            // 
+            this.btnSkip.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSkip.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSkip.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSkip.Location = new System.Drawing.Point(970, 33);
+            this.btnSkip.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnSkip.Name = "btnSkip";
+            this.btnSkip.Size = new System.Drawing.Size(127, 70);
+            this.btnSkip.TabIndex = 38;
+            this.btnSkip.TabStop = false;
+            this.btnSkip.Tag = "50";
+            this.btnSkip.Text = "Skip Round";
+            this.btnSkip.UseVisualStyleBackColor = false;
+            this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
+            // 
             // frmJeopardyBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1143, 740);
+            this.Controls.Add(this.btnSkip);
             this.Controls.Add(this.lblLastQuestion);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.lblF);
@@ -740,5 +758,6 @@
         private System.Windows.Forms.Label lblF;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label lblLastQuestion;
+        private System.Windows.Forms.Button btnSkip;
     }
 }

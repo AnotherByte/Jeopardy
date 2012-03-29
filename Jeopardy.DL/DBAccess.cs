@@ -82,7 +82,7 @@ namespace Jeopardy.DL
         {
             // set categories used
             ExecuteNonQuery(string.Format("update tbl_category set category_used = 1 where category_id in ({0})", sIDs));
-            return ExecuteQuery(string.Format("select * from tbl_category where category_id in ({0})", sIDs));
+            return ExecuteQuery(string.Format("select * from tbl_category where category_id in ({0}) order by random()", sIDs));
         }
 
         // returns datatable of tbl_category (UNUSED category and IS final jeopardy)
@@ -114,7 +114,7 @@ namespace Jeopardy.DL
         // returns datatable of tbl_answer
         static public DataTable GetAnswers(string ID)
         {
-            return ExecuteQuery(string.Format("select * from tbl_answer where question_id = {0}", ID));
+            return ExecuteQuery(string.Format("select * from tbl_answer where question_id = {0} order by random()", ID));
         }
 
         // get # of UNUSED categories
@@ -139,7 +139,7 @@ namespace Jeopardy.DL
                 ResetCategories(0);
             }
 
-            DataTable dtUnusedID = ExecuteQuery(string.Format("select category_id from tbl_category where (category_used = 0 AND category_is_final = 0 AND category_id Not in ({0}))", sIDs));
+            DataTable dtUnusedID = ExecuteQuery(string.Format("select category_id from tbl_category where (category_used = 0 AND category_is_final = 0 AND category_id Not in ({0})) order by random()", sIDs));
             List<int> unused = new List<int>();
 
             // fill list with cat_id's
