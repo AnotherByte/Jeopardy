@@ -31,8 +31,8 @@
             this.lstUsers = new System.Windows.Forms.ListBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnInputForm = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtNewName = new System.Windows.Forms.TextBox();
+            this.btnNew = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstUsers
@@ -63,29 +63,30 @@
             this.btnInputForm.UseVisualStyleBackColor = true;
             this.btnInputForm.Click += new System.EventHandler(this.btnInputForm_Click);
             // 
-            // textBox1
+            // txtNewName
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 194);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtNewName.Location = new System.Drawing.Point(139, 194);
+            this.txtNewName.Name = "txtNewName";
+            this.txtNewName.Size = new System.Drawing.Size(114, 20);
+            this.txtNewName.TabIndex = 5;
             // 
-            // button1
+            // btnNew
             // 
-            this.button1.Location = new System.Drawing.Point(26, 192);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Add New User";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNew.Location = new System.Drawing.Point(26, 192);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(90, 23);
+            this.btnNew.TabIndex = 7;
+            this.btnNew.Text = "Add New User";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // frmJeopardyLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(293, 248);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnNew);
+            this.Controls.Add(this.txtNewName);
             this.Controls.Add(this.btnInputForm);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lstUsers);
@@ -104,8 +105,8 @@
         private System.Windows.Forms.ListBox lstUsers;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnInputForm;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtNewName;
+        private System.Windows.Forms.Button btnNew;
     }
 }
 

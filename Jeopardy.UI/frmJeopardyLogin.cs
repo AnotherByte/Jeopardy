@@ -19,14 +19,7 @@ namespace Jeopardy.UI
         {
             InitializeComponent();
 
-            oUsers = new cUsers();
-            oUsers.FillUsers();
-
-            foreach (cUser oUser in oUsers.Items)
-            {
-                lstUsers.DataSource = oUsers.Items;
-                lstUsers.DisplayMember = "Display";
-            }
+            LoadList();
         }
 
 
@@ -55,6 +48,29 @@ namespace Jeopardy.UI
             this.Hide();
             oInputForm.ShowDialog();
             this.Close();
+        }
+
+        private void LoadList()
+        {
+            oUsers = new cUsers();
+            oUsers.FillUsers();
+
+            foreach (cUser oUser in oUsers.Items)
+            {
+                lstUsers.DataSource = oUsers.Items;
+                lstUsers.DisplayMember = "Display";
+            }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            if (txtNewName.Text != "")
+            {
+                cUser oUser = new cUser();
+                oUser.New(txtNewName.Text);
+
+                LoadList();
+            }
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using Jeopardy.DL;
 
 namespace Jeopardy.BL
 {
@@ -49,6 +50,12 @@ namespace Jeopardy.BL
             {
                 throw ex;
             }
+        }
+
+        // new user
+        public void New(string Name)
+        {
+            Load( DBAccess.NewUser(Name));
         }
     }
 }

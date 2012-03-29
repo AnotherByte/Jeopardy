@@ -190,5 +190,13 @@ namespace Jeopardy.DL
         {
             ExecuteNonQuery(string.Format("update tbl_user set user_high_score = {0} where user_id = {1}", Score, UserID));
         }
+
+        public static DataRow NewUser(string Name)
+        {
+            string sql = string.Format("insert into tbl_user (user_description, user_high_score) values ('{0}', 0)", Name);
+            ExecuteNonQuery(sql);
+
+            return ExecuteQuery(string.Format("select * from tbl_user order by user_id desc limit 1")).Rows[0];
+        }
     }
 }
